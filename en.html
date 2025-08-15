@@ -68,7 +68,7 @@
             --light-gray: #a0a0a0;
         }
         html { scroll-behavior: smooth; }
-        body { margin: 0; padding-top: 40px; font-family: 'Lato', sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.8; font-size: 18px; font-weight: 300; box-sizing: border-box; overflow-x: hidden; }
+        body { margin: 0; padding-top: 10px; font-family: 'Lato', sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.8; font-size: 18px; font-weight: 300; box-sizing: border-box; overflow-x: hidden; }
         body.no-scroll { overflow: hidden; }
         .container { max-width: 900px; margin: 0 auto; text-align: center; padding: 0 20px; box-sizing: border-box; }
         
@@ -92,7 +92,7 @@
         .hero {
             position: relative;
             z-index: 5;
-            min-height: 100vh;
+            min-height: 60vh;
             width: 100%;
             margin: 0;
             padding: 0;
@@ -106,6 +106,17 @@
             animation: gradientBackground 15s ease infinite;
             box-sizing: border-box;
             overflow: hidden;
+        }
+        .mobile-header {
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 10px 15px;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 10;
+            background-color: transparent;
         }
         @keyframes gradientBackground {
             0% { background-position: 0% 50%; }
@@ -174,7 +185,7 @@
         .about-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+            transition: max-height 0.5s ease-out, opacity 0.5s ease-out, margin-bottom 0.5s ease-out;
             opacity: 0;
             background: linear-gradient(135deg, #111111, #1a1a1a);
             border-radius: 8px;
@@ -188,6 +199,7 @@
             max-height: 800px;
             opacity: 1;
             padding: 20px;
+            margin-bottom: 10px;
         }
         .about-image {
             max-width: 300px;
@@ -402,7 +414,7 @@
             color: var(--bg-color);
         }
         .faq-question::after {
-            content: '\2B9F';
+            content: '\25BC';
             font-size: 1.3rem;
             display: inline-block;
             transition: transform 0.2s ease;
@@ -796,45 +808,32 @@
         @media (max-width: 768px) {
             body {
                 font-size: 16px;
-                padding-top: 30px;
+                padding-top: 10px;
             }
             .container {
                 padding: 0 15px;
             }
-            .header-content {
-                position: relative;
-                justify-content: space-between;
-            }
-            .header-left {
-                position: absolute;
-                left: 20px;
-                top: 50%;
-                transform: translateY(-50%);
-            }
-            .header-left .logo-text {
+            .sticky-header {
                 display: none;
             }
-            .header-center {
+            .mobile-header {
                 display: flex;
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                padding: 10px 15px;
+                box-sizing: border-box;
+                position: relative;
+                z-index: 10;
+                background-color: transparent;
             }
-            .header-center .logo-img {
-                display: none;
+            .language-dropdown-button {
+                padding: 5px 8px;
+                font-size: 0.9rem;
             }
-            .header-center .logo-text {
-                font-size: 1.6rem;
-            }
-            .header-right {
-                position: absolute;
-                right: 20px;
-                top: 50%;
-                transform: translateY(-50%);
-            }
-            .nav-button-text {
-                display: none;
+            .language-dropdown-content a {
+                padding: 8px 15px;
+                font-size: 0.9rem;
             }
             .nav-button {
                 padding: 5px 8px;
@@ -842,6 +841,9 @@
             .nav-button img {
                 width: 16px;
                 height: 16px;
+            }
+            .nav-button-text {
+                display: none;
             }
             .nav-button.disabled::after {
                 content: '🔜';
@@ -852,13 +854,15 @@
                 display: none;
             }
             .hero {
-                min-height: 70vh;
+                min-height: 60vh;
                 width: 100%;
                 padding: 0;
+                position: relative;
+                padding-top: 50px;
             }
             .hero-logo {
-                max-width: 300px;
-                max-height: 40vh;
+                max-width: 250px;
+                max-height: 30vh;
                 margin: 6px auto;
             }
             .hero p {
@@ -877,6 +881,21 @@
                 background: #E0C34A;
                 color: var(--bg-color);
             }
+            .about-content {
+                margin: 0 auto;
+                max-height: 0;
+                padding: 0;
+                transition: max-height 0.5s ease-out, opacity 0.5s ease-out, padding 0.5s ease-out, margin-bottom 0.5s ease-out;
+            }
+            .about-content.active {
+                max-height: 1000px;
+                padding: 10px;
+                margin-bottom: 10px;
+            }
+            .style-craft-section {
+                margin-top: 0;
+                padding-top: 0;
+            }
             .section-title {
                 font-size: 2.2rem;
             }
@@ -889,13 +908,46 @@
             .section-subtitle {
                 font-size: 1.1rem;
             }
+            .services-section {
+                display: block;
+            }
+            .services-list {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
             .service-item {
                 max-width: 90%;
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+                margin: 0 auto;
             }
-            .service-item:nth-child(odd) { margin-left: 5px; margin-right: auto; }
-            .service-item:nth-child(even) { margin-right: 5px; margin-left: auto; }
-            .service-item:nth-child(odd).reveal { opacity: 0; transform: translateX(-20px); }
-            .service-item:nth-child(even).reveal { opacity: 0; transform: translateX(20px); }
+            .service-item:nth-child(odd),
+            .service-item:nth-child(even) {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .service-item:nth-child(odd).reveal,
+            .service-item:nth-child(even).reveal {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            .service-item.reveal.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .service-icon {
+                width: 32px;
+                height: 32px;
+            }
+            .service-text h3 {
+                font-size: 1.3rem;
+            }
+            .service-text p {
+                font-size: 0.9rem;
+            }
             .about-image {
                 max-width: 250px;
             }
@@ -938,35 +990,38 @@
                 box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
             }
             .faq-modal {
-                width: 95%;
-                max-height: 90vh;
+                width: 90%;
+                max-height: 70vh;
             }
             .faq-modal-header {
-                padding: 10px 15px;
-                border-radius: 16px 16px 0 0;
+                padding: 8px 10px;
+                border-radius: 12px 12px 0 0;
             }
             .faq-modal h3 {
-                font-size: 1.9rem;
+                font-size: 1.6rem;
             }
             .faq-items {
-                padding: 15px 10px;
-                max-height: calc(90vh - 50px);
+                padding: 10px;
+                max-height: calc(70vh - 50px);
             }
             .faq-spacer {
-                height: 60px;
-                background: #1a1a1a;
+                height: 40px;
             }
             .faq-question {
-                font-size: 1.1rem;
+                font-size: 1rem;
+                padding: 8px;
             }
             .faq-question::after {
-                font-size: 1rem;
+                content: '\25BC';
+                font-size: 0.9rem;
             }
             .faq-answer {
-                font-size: 1rem;
+                font-size: 0.9rem;
+                padding: 0 8px;
             }
             .faq-answer.active {
-                max-height: 500px;
+                max-height: 300px;
+                padding: 8px;
             }
             .contact-modal {
                 width: 90%;
@@ -984,18 +1039,6 @@
             }
             .faq-close {
                 font-size: 1.6rem;
-            }
-            .about-content {
-                max-height: 1000px;
-            }
-            .about-content.active {
-                padding: 15px;
-            }
-            .language-dropdown-button {
-                padding: 5px 8px;
-            }
-            .language-dropdown-content a {
-                padding: 8px 15px;
             }
         }
     </style>
@@ -1021,7 +1064,7 @@
                 </div>
             </div>
             <div class="header-center">
-                <a href="https://hair-estetic.com/en.html" class="logo-container">
+                <a href="#top" class="logo-container">
                     <img src="logo.png" alt="Hair Estetic Logo" class="logo-img" loading="lazy">
                     <span class="logo-text">Hair Estetic</span>
                 </a>
@@ -1035,6 +1078,33 @@
             </div>
         </div>
     </header>
+
+    <section class="hero" id="top">
+        <div class="mobile-header">
+            <div class="language-dropdown">
+                <button class="language-dropdown-button" aria-label="Change language">
+                    <img src="globe.png" width="16" height="16" alt="Language switcher" loading="lazy">
+                    EN
+                </button>
+                <div class="language-dropdown-content">
+                    <a href="index.html">PL</a>
+                    <a href="en.html" class="active">EN</a>
+                </div>
+            </div>
+            <div class="nav-button disabled">
+                <img src="instagram-icon.png" alt="Instagram Icon" loading="lazy">
+                <span class="coming-soon">Coming Soon</span>
+            </div>
+        </div>
+        <img src="logo-typography.png" alt="Hair Estetic Typography Logo" class="hero-logo reveal" loading="lazy">
+        <p class="reveal">Ready to enhance your beauty with new hair? Contact me to discover your uniqueness.</p>
+        <button class="cta-button about-toggle reveal">About Me</button>
+        <div class="about-content">
+            <img src="about-image.jpg" alt="About Me - Image" class="about-image reveal" loading="lazy">
+            <p class="section-subtitle reveal">My name is Iwona Wach, and I created Hair Estetic – a place where beautiful hair is an art form. I specialize in keratin hair extensions to ensure a natural, healthy look that boosts your confidence daily. I work in a cozy, comfortable atmosphere or visit clients who prefer transformations at home. Soon, Hair Estetic will expand to the Netherlands, because I believe women worldwide deserve luxury at its finest. Perfection in every strand – that’s my promise.</p>
+            <a href="#contact-section" class="cta-button reveal contact-link">Contact</a>
+        </div>
+    </section>
 
     <div class="contact-overlay"></div>
     <div class="contact-modal">
@@ -1120,21 +1190,10 @@
         </div>
     </div>
 
-    <section class="hero">
-        <img src="logo-typography.png" alt="Hair Estetic Typography Logo" class="hero-logo reveal" loading="lazy">
-        <p class="reveal">Ready to enhance your beauty with new hair? Contact me to discover your uniqueness.</p>
-        <button class="cta-button about-toggle reveal">About Me</button>
-        <div class="about-content">
-            <img src="about-image.jpg" alt="About Me - Image" class="about-image reveal" loading="lazy">
-            <p class="section-subtitle reveal">My name is Iwona Wach, and I created Hair Estetic – a place where beautiful hair is an art form. I specialize in keratin hair extensions to ensure a natural, healthy look that boosts your confidence daily. I work in a cozy, comfortable atmosphere or visit clients who prefer transformations at home. Soon, Hair Estetic will expand to the Netherlands, because I believe women worldwide deserve luxury at its finest. Perfection in every strand – that’s my promise.</p>
-            <a href="#contact-section" class="cta-button reveal contact-link">Contact</a>
-        </div>
-    </section>
-
     <main>
         <section class="section style-craft-section">
             <div class="container">
-                <h2 class="section-title reveal">Your Style, Our Craft</h2>
+                <h2 class="section-title reveal">Your Style, My Craft</h2>
                 <p class="section-subtitle reveal">I created Hair Estetic because I believe hair extensions are an art form of creating beauty in its purest form. My attention to detail and precision at every stage guarantee a result that impresses with naturalness, lightness, and elegance, boosting your confidence and refreshing your look. It’s an experience that makes you feel special every day.</p>
             </div>
         </section>
@@ -1243,24 +1302,28 @@
             dropdowns.forEach(dropdown => {
                 dropdown.classList.remove('open');
             });
-            // Clear hash from URL to prevent scrolling to #contact-section
-            if (window.location.hash) {
-                window.history.replaceState(null, null, window.location.pathname);
+            // Clear hash from URL safely
+            if (window.location.hash && window.location.origin !== 'null' && window.location.href !== 'about:srcdoc') {
+                try {
+                    history.replaceState(null, null, window.location.pathname);
+                } catch (e) {
+                    console.warn('Unable to modify history state:', e);
+                }
             }
         });
 
         document.addEventListener('DOMContentLoaded', () => {
             // Language dropdown toggle
-            const dropdownButton = document.querySelector('.language-dropdown-button');
-            if (dropdownButton) {
-                dropdownButton.addEventListener('click', (event) => {
+            const dropdownButtons = document.querySelectorAll('.language-dropdown-button');
+            dropdownButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
                     event.stopPropagation();
                     const dropdown = event.target.closest('.language-dropdown');
                     if (dropdown) {
                         dropdown.classList.toggle('open');
                     }
                 });
-            }
+            });
 
             // Close dropdown when clicking outside
             document.addEventListener('click', (event) => {
@@ -1272,6 +1335,23 @@
                 });
             });
 
+            // Scroll to top on logo click for desktop
+            const logoLink = document.querySelector('.header-center .logo-container');
+            if (logoLink) {
+                logoLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    // Clear hash safely
+                    if (window.location.origin !== 'null' && window.location.href !== 'about:srcdoc') {
+                        try {
+                            history.replaceState(null, null, window.location.pathname);
+                        } catch (e) {
+                            console.warn('Unable to modify history state:', e);
+                        }
+                    }
+                });
+            }
+
             // Smooth scroll to contact section and prevent hash persistence
             const contactLinks = document.querySelectorAll('.contact-link');
             contactLinks.forEach(link => {
@@ -1281,15 +1361,21 @@
                     const target = document.querySelector(targetId);
                     if (target) {
                         target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        // Remove hash from URL after scrolling
-                        setTimeout(() => {
-                            window.history.replaceState(null, null, window.location.pathname);
-                        }, 100);
+                        // Clear hash safely
+                        if (window.location.origin !== 'null' && window.location.href !== 'about:srcdoc') {
+                            setTimeout(() => {
+                                try {
+                                    history.replaceState(null, null, window.location.pathname);
+                                } catch (e) {
+                                    console.warn('Unable to modify history state:', e);
+                                }
+                            }, 100);
+                        }
                     }
                 });
             });
 
-            // About section toggle with scroll
+            // About section toggle with dynamic space management
             const aboutToggle = document.querySelector('.about-toggle');
             const aboutContent = document.querySelector('.about-content');
             if (aboutToggle && aboutContent) {
@@ -1298,10 +1384,12 @@
                     aboutContent.classList.toggle('active');
                     aboutToggle.classList.toggle('active');
                     if (!isActive) {
+                        aboutContent.style.maxHeight = `${aboutContent.scrollHeight}px`;
                         setTimeout(() => {
                             aboutContent.scrollIntoView({ behavior: 'smooth', block: 'center' });
                         }, 300);
                     } else {
+                        aboutContent.style.maxHeight = '0';
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                     }
                 });
