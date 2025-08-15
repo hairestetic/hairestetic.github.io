@@ -112,7 +112,7 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            padding: 10px 15px;
+            padding: 5px 15px;
             box-sizing: border-box;
             position: relative;
             z-index: 10;
@@ -827,6 +827,10 @@
                 z-index: 10;
                 background-color: transparent;
             }
+            .mobile-header .nav-buttons {
+                display: flex;
+                gap: 10px;
+            }
             .language-dropdown-button {
                 padding: 5px 8px;
                 font-size: 0.9rem;
@@ -854,25 +858,25 @@
                 display: none;
             }
             .hero {
-                min-height: 50vh;
+                min-height: 40vh;
                 width: 100%;
                 padding: 0;
                 position: relative;
-                padding-top: 40px;
+                padding-top: 30px;
             }
             .hero-logo {
-                max-width: 300px;
-                max-height: 35vh;
-                margin: 4px auto;
+                max-width: 320px;
+                max-height: 38vh;
+                margin: 2px auto;
             }
             .hero p {
                 font-size: 1.1rem;
-                margin-bottom: 4px;
+                margin-bottom: 2px;
             }
             .cta-button {
                 padding: 15px 30px;
                 font-size: 1.1rem;
-                margin: 4px auto;
+                margin: 2px auto;
                 box-shadow: 0 2px 6px rgba(212, 175, 55, 0.2);
             }
             .cta-button:not(.disabled):hover {
@@ -890,7 +894,7 @@
             .about-content.active {
                 max-height: 1000px;
                 padding: 10px;
-                margin-bottom: 20px;
+                margin-bottom: 40px;
             }
             .style-craft-section {
                 margin-top: 20px;
@@ -1098,9 +1102,14 @@
                     <a href="en.html" class="active">EN</a>
                 </div>
             </div>
-            <div class="nav-button disabled">
-                <img src="instagram-icon.png" alt="Instagram Icon" loading="lazy">
-                <span class="coming-soon">Coming Soon</span>
+            <div class="nav-buttons">
+                <a href="tel:+48794483515" class="nav-button">
+                    <img src="phone-icon.png" alt="Phone Icon" loading="lazy">
+                </a>
+                <div class="nav-button disabled">
+                    <img src="instagram-icon.png" alt="Instagram Icon" loading="lazy">
+                    <span class="coming-soon">Coming Soon</span>
+                </div>
             </div>
         </div>
         <img src="logo-typography.png" alt="Hair Estetic Typography Logo" class="hero-logo reveal" loading="lazy">
