@@ -9,8 +9,8 @@
     <meta name="title" content="Hair Estetic">
     <meta property="og:title" content="Hair Estetic">
     <meta property="og:description" content="Hair extension services tailored to your style. Operating in Poland, soon in the Netherlands. Contact us to book an appointment.">
-    <meta property="og:image" content="https://hair-estetic.com/logo.png">
-    <meta property="og:url" content="https://hair-estetic.com/en.html">
+    <meta property="og:image" content="https://www.hair-estetic.com/logo.png">
+    <meta property="og:url" content="https://www.hair-estetic.com/en.html">
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#0a0a0a">
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
@@ -22,15 +22,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
-    <link rel="alternate" hreflang="pl" href="https://hair-estetic.com/">
-    <link rel="alternate" hreflang="en" href="https://hair-estetic.com/en.html">
+    <link rel="alternate" hreflang="pl" href="https://www.hair-estetic.com/">
+    <link rel="alternate" hreflang="en" href="https://www.hair-estetic.com/en.html">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Hair Estetic",
         "description": "Hair extension services tailored to your style. Operating in Poland, soon in the Netherlands. Contact us to book an appointment.",
-        "url": "https://hair-estetic.com/en.html",
+        "url": "https://www.hair-estetic.com/en.html",
         "inLanguage": "en"
     }
     </script>
@@ -39,7 +39,7 @@
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Hair Estetic",
-        "image": "https://hair-estetic.com/logo.png",
+        "image": "https://www.hair-estetic.com/logo.png",
         "telephone": "+48 794 483 515",
         "email": "studio.hairestetic@gmail.com",
         "address": {
@@ -48,7 +48,7 @@
             "addressLocality": "Jaworzno",
             "addressCountry": "PL"
         },
-        "url": "https://hair-estetic.com/"
+        "url": "https://www.hair-estetic.com/"
     }
     </script>
     <!-- Google Tag Manager -->
@@ -82,7 +82,7 @@
         .logo-container { display: flex; align-items: center; gap: 15px; text-decoration: none; }
         .logo-img { height: 35px; }
         .logo-text { font-family: 'Great Vibes', cursive; font-size: 1.8rem; font-weight: 400; color: var(--accent-color); }
-        .nav-button { padding: 8px 15px; font-size: 0.8rem; font-weight: 700; border: 1px solid var(--accent-color); border-radius: 5px; background-color: rgba(10, 10, 10, 0.8); backdrop-filter: blur(10px); color: var(--accent-color); cursor: pointer; text-decoration: none; transition: all 0.3s; display: flex; align-items: center; gap: 8px; box-sizing: border-box; }
+        .nav-button { padding: 8px 15px; font-size: 0.8rem; font-weight: 700; border: 1px solid var(--accent-color); border-radius: 5px; background-color: rgba(10, 10, 10, 0.8); backdrop-filter: blur(10px); color: var(--accent-color); cursor: pointer; text-decoration: none; transition: all 0.3s; display: flex; align-items: center; gap: 8px; box-sizing: border-box; overflow: hidden; }
         .nav-button:hover { background-color: var(--accent-color); color: var(--bg-color); }
         .nav-button.disabled { pointer-events: none; opacity: 0.6; cursor: default; }
         .nav-button.disabled:hover { background-color: rgba(10, 10, 10, 0.8); color: var(--accent-color); transform: none; box-shadow: none; }
@@ -812,9 +812,11 @@
                 border-radius: 5px; 
                 min-width: 50px;
                 width: 50px;
+                height: 36px;
                 justify-content: center;
+                overflow: hidden;
             }
-            .nav-button img { width: 18px; height: 18px; }
+            .nav-button img { width: 16px; height: 16px; }
             .nav-button-text { display: none; }
             .nav-button.disabled::after { content: '🔜'; font-size: 0.8rem; margin-left: 5px; }
             .coming-soon { display: none; }
@@ -827,6 +829,7 @@
                 border-radius: 5px; 
                 min-width: 50px;
                 width: 50px;
+                height: 36px;
                 justify-content: center;
             }
             .language-dropdown-content { 
@@ -852,6 +855,9 @@
                 font-size: 1rem; 
                 margin: 5px auto; 
                 box-shadow: 0 2px 4px rgba(212, 175, 55, 0.2); 
+            }
+            .cta-button.about-toggle {
+                margin: 5px auto 15px;
             }
             .cta-button:not(.disabled):hover { 
                 transform: scale(1.03); 
@@ -924,8 +930,14 @@
             .faq-modal { width: 85%; max-height: 80vh; }
             .faq-modal-header { padding: 10px 15px; }
             .faq-modal h3 { font-size: 1.8rem; }
-            .faq-items { padding: 10px; max-height: calc(80vh - 50px); }
-            .faq-spacer { height: 50px; }
+            .faq-items { 
+                padding: 10px 10px 50px; 
+                max-height: calc(80vh - 50px); 
+            }
+            .faq-spacer { 
+                height: 50px; 
+                background: #1a1a1a; 
+            }
             .faq-item { margin-bottom: 10px; }
             .faq-question { font-size: 1.1rem; padding: 10px; }
             .faq-question::after { font-size: 1rem; }
@@ -1064,7 +1076,7 @@
             <div class="mobile-nav-left">
                 <div class="language-dropdown">
                     <button class="language-dropdown-button" aria-label="Change language">
-                        <img src="globe.png" width="18" height="18" alt="Language switcher" loading="lazy">
+                        <img src="globe.png" width="16" height="16" alt="Language switcher" loading="lazy">
                         EN
                     </button>
                     <div class="language-dropdown-content">
