@@ -67,8 +67,8 @@
             --dark-gray: #111111;
             --light-gray: #a0a0a0;
         }
-        html { scroll-behavior: smooth; }
-        body { margin: 0; padding-top: 60px; font-family: 'Lato', sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.8; font-size: 18px; font-weight: 300; box-sizing: border-box; overflow-x: hidden; }
+        html { scroll-behavior: smooth; margin: 0; }
+        body { margin: 0; font-family: 'Lato', sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.8; font-size: 18px; font-weight: 300; box-sizing: border-box; overflow-x: hidden; }
         body.no-scroll { overflow: hidden; }
         .container { max-width: 900px; margin: 0 auto; text-align: center; padding: 0 20px; box-sizing: border-box; }
         
@@ -95,7 +95,7 @@
             min-height: 100vh;
             width: 100%;
             margin: 0;
-            padding: 0;
+            padding: 5px 0 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -116,7 +116,9 @@
             display: none;
             width: 100%;
             max-width: 1200px;
-            padding: 10px 20px;
+            padding: 5px 15px;
+            margin-top: 0;
+            margin-bottom: 10px;
             box-sizing: border-box;
             justify-content: space-between;
             align-items: center;
@@ -125,7 +127,6 @@
         .mobile-nav-right { gap: 10px; }
         .hero-logo {
             max-width: 400px;
-            max-height: 45vh;
             width: 100%;
             height: auto;
             margin: 8px auto;
@@ -792,29 +793,45 @@
         }
 
         @media (max-width: 768px) {
-            body { padding-top: 5px; font-size: 16px; }
+            body { font-size: 16px; }
             .sticky-header { display: none; }
             .mobile-nav { 
                 display: flex; 
                 margin-bottom: 10px; 
             }
             .nav-button { 
-                padding: 5px 8px; 
-                font-size: 0.7rem; 
+                padding: 8px 12px; 
+                font-size: 0.8rem; 
                 background: rgba(10, 10, 10, 0.8); 
                 backdrop-filter: blur(10px); 
                 border: 1px solid var(--accent-color); 
                 border-radius: 5px; 
+                min-width: 50px;
+                justify-content: center;
             }
-            .nav-button img { width: 16px; height: 16px; }
+            .nav-button img { width: 18px; height: 18px; }
             .nav-button-text { display: none; }
             .nav-button.disabled::after { content: '🔜'; font-size: 0.8rem; margin-left: 5px; }
             .coming-soon { display: none; }
-            .language-dropdown-button { font-size: 0.9rem; padding: 5px 8px; background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(10px); border: 1px solid var(--accent-color); border-radius: 5px; }
+            .language-dropdown-button { 
+                font-size: 0.8rem; 
+                padding: 8px 12px; 
+                background: rgba(10, 10, 10, 0.8); 
+                backdrop-filter: blur(10px); 
+                border: 1px solid var(--accent-color); 
+                border-radius: 5px; 
+                min-width: 50px;
+                justify-content: center;
+            }
             .language-dropdown-content { min-width: 80px; }
             .language-dropdown-content a { padding: 6px 12px; font-size: 0.8rem; }
-            .hero { min-height: 70vh; padding: 5px 0; }
-            .hero-logo { max-width: 350px; max-height: 38vh; margin: 5px auto; }
+            .hero { min-height: 70vh; }
+            .hero-logo { 
+                max-width: 350px; 
+                width: 100%; 
+                aspect-ratio: 1/1; 
+                margin: 5px auto; 
+            }
             .hero p { font-size: 1rem; margin-bottom: 5px; }
             .cta-button { 
                 padding: 12px 25px; 
@@ -871,7 +888,18 @@
             .slider img { width: 28px; height: 28px; }
             .slider-label .top-label { font-size: 0.6rem; padding: 2px 6px; }
             .slider-label .scroll-prompt { font-size: 1rem; padding: 3px 6px; }
-            .contact-modal { width: 90%; max-width: 400px; padding: 15px; }
+            .contact-modal { 
+                width: 85%; 
+                max-height: 80vh; 
+                max-width: 400px; 
+                padding: 15px; 
+                top: 50%; 
+                left: 50%; 
+                transform: translate(-50%, -50%) scale(0.8); 
+            }
+            .contact-modal.active { 
+                transform: translate(-50%, -50%) scale(1); 
+            }
             .contact-modal h2 { font-size: 1.8rem; margin-bottom: 10px; }
             .contact-modal .contact-icons { gap: 15px; margin-top: 10px; }
             .contact-icon { width: 100px; min-height: 90px; padding: 8px; }
@@ -879,10 +907,10 @@
             .contact-icon.whatsapp img, .contact-icon.messenger img { width: 32px; height: 32px; }
             .contact-icon span { font-size: 0.7rem; }
             .contact-icon:hover { transform: scale(1.03); box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3); }
-            .faq-modal { width: 95%; max-height: 90vh; }
+            .faq-modal { width: 85%; max-height: 80vh; }
             .faq-modal-header { padding: 10px 15px; }
             .faq-modal h3 { font-size: 1.8rem; }
-            .faq-items { padding: 10px; max-height: calc(90vh - 50px); }
+            .faq-items { padding: 10px; max-height: calc(80vh - 50px); }
             .faq-spacer { height: 50px; }
             .faq-item { margin-bottom: 10px; }
             .faq-question { font-size: 1.1rem; padding: 10px; }
@@ -1022,7 +1050,7 @@
             <div class="mobile-nav-left">
                 <div class="language-dropdown">
                     <button class="language-dropdown-button" aria-label="Change language">
-                        <img src="globe.png" width="16" height="16" alt="Language switcher" loading="lazy">
+                        <img src="globe.png" width="18" height="18" alt="Language switcher" loading="lazy">
                         EN
                     </button>
                     <div class="language-dropdown-content">
