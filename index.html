@@ -774,6 +774,11 @@
         }
 
         @media (min-width: 769px) {
+            /* Ukrywamy górny pasek mobilny na PC */
+            .mobile-top-bar {
+                display: none;
+            }
+            
             .language-dropdown-button {
                 font-size: 1.1rem;
                 padding: 8px 15px;
@@ -796,204 +801,280 @@
         @media (max-width: 768px) {
             body {
                 font-size: 16px;
-                padding-top: 30px;
+                padding-top: 0;
             }
             .container {
                 padding: 0 15px;
             }
-            .header-content {
-                position: relative;
-                justify-content: space-between;
-            }
-            .header-left {
-                position: absolute;
-                left: 20px;
-                top: 50%;
-                transform: translateY(-50%);
-            }
-            .header-left .logo-text {
+            
+            /* Usuwamy nagłówek w wersji mobilnej */
+            .sticky-header {
                 display: none;
             }
-            .header-center {
+            
+            /* Dodajemy górny pasek z przyciskami */
+            .mobile-top-bar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background: transparent;
+                z-index: 1000;
+                padding: 15px 20px;
                 display: flex;
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
+                justify-content: space-between;
+                align-items: center;
             }
-            .header-center .logo-img {
-                display: none;
+            
+            .mobile-top-bar .language-dropdown-button {
+                background: rgba(10, 10, 10, 0.8);
+                backdrop-filter: blur(10px);
+                border: 1px solid var(--accent-color);
+                border-radius: 5px;
+                padding: 8px 12px;
+                color: var(--accent-color);
+                font-size: 0.9rem;
             }
-            .header-center .logo-text {
-                font-size: 1.6rem;
+            
+            .mobile-top-bar .nav-button {
+                background: rgba(10, 10, 10, 0.8);
+                backdrop-filter: blur(10px);
+                border: 1px solid var(--accent-color);
+                border-radius: 5px;
+                padding: 8px 12px;
+                color: var(--accent-color);
+                font-size: 0.9rem;
             }
-            .header-right {
-                position: absolute;
-                right: 20px;
-                top: 50%;
-                transform: translateY(-50%);
+            
+            .mobile-top-bar .phone-button {
+                background: rgba(10, 10, 10, 0.8);
+                backdrop-filter: blur(10px);
+                border: 1px solid var(--accent-color);
+                border-radius: 5px;
+                padding: 8px 12px;
+                color: var(--accent-color);
+                font-size: 0.9rem;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                gap: 5px;
             }
-            .nav-button-text {
-                display: none;
-            }
-            .nav-button {
-                padding: 5px 8px;
-            }
-            .nav-button img {
-                width: 16px;
-                height: 16px;
-            }
-            .nav-button.disabled::after {
-                content: '🔜';
-                font-size: 0.8rem;
-                margin-left: 5px;
-            }
-            .coming-soon {
-                display: none;
-            }
+            
             .hero {
                 min-height: 70vh;
                 width: 100%;
-                padding: 0;
+                padding: 60px 0 0 0;
+                margin-top: 0;
             }
+            
             .hero-logo {
-                max-width: 300px;
-                max-height: 40vh;
-                margin: 6px auto;
+                max-width: 280px;
+                max-height: 35vh;
+                margin: 10px auto;
             }
+            
             .hero p {
                 font-size: 1.1rem;
                 margin-bottom: 6px;
             }
+            
             .cta-button {
                 padding: 15px 30px;
                 font-size: 1.1rem;
                 margin: 6px auto;
                 box-shadow: 0 2px 6px rgba(212, 175, 55, 0.2);
             }
+            
             .cta-button:not(.disabled):hover {
                 transform: scale(1.03);
                 box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
                 background: #E0C34A;
                 color: var(--bg-color);
             }
+            
+            /* Zmniejszamy odstęp między przyciskiem O mnie a sekcją Twój styl */
+            .style-craft-section {
+                padding-top: 20px;
+                margin-top: 0;
+            }
+            
             .section-title {
                 font-size: 2.2rem;
             }
+            
             .section-title::after {
                 width: 40px;
             }
+            
             .section-title:hover::after {
                 width: 80px;
             }
+            
             .section-subtitle {
                 font-size: 1.1rem;
             }
+            
+            /* Poprawiamy sekcję usług dla wersji mobilnej */
+            .services-section {
+                padding-top: 20px;
+            }
+            
             .service-item {
                 max-width: 90%;
+                margin: 0 auto 20px;
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
             }
-            .service-item:nth-child(odd) { margin-left: 5px; margin-right: auto; }
-            .service-item:nth-child(even) { margin-right: 5px; margin-left: auto; }
-            .service-item:nth-child(odd).reveal { opacity: 0; transform: translateX(-20px); }
-            .service-item:nth-child(even).reveal { opacity: 0; transform: translateX(20px); }
+            
+            .service-item:nth-child(odd),
+            .service-item:nth-child(even) {
+                margin: 0 auto 20px;
+            }
+            
+            /* Animacje od boku dla wersji mobilnej */
+            .service-item:nth-child(odd).reveal {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            
+            .service-item:nth-child(even).reveal {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            
+            .service-item.reveal.visible {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            
             .about-image {
                 max-width: 250px;
             }
+            
             .about-content .section-subtitle {
                 font-size: 1.1rem;
             }
+            
             .slider-container {
                 max-width: 100%;
             }
+            
             .slider-label .top-label {
                 font-size: 0.7rem;
                 padding: 3px 8px;
             }
+            
             .slider-label .scroll-prompt {
                 font-size: 1.2rem;
                 padding: 4px 8px;
             }
+            
             .slider img {
                 width: 32px;
                 height: 32px;
             }
+            
             .contact-icon {
                 width: 120px;
                 min-height: 100px;
             }
+            
             .contact-icon img {
                 width: 30px;
                 height: 30px;
             }
+            
             .contact-icon.whatsapp img,
             .contact-icon.messenger img {
                 width: 36px;
                 height: 36px;
             }
+            
             .contact-icon span {
                 font-size: 0.8rem;
             }
+            
             .contact-icon:hover {
                 transform: scale(1.03);
                 box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
             }
+            
+            /* Poprawiamy FAQ dla wersji mobilnej */
             .faq-modal {
                 width: 95%;
                 max-height: 90vh;
             }
+            
             .faq-modal-header {
                 padding: 10px 15px;
                 border-radius: 16px 16px 0 0;
             }
+            
             .faq-modal h3 {
                 font-size: 1.9rem;
             }
+            
             .faq-items {
                 padding: 15px 10px;
                 max-height: calc(90vh - 50px);
             }
+            
             .faq-spacer {
                 height: 60px;
                 background: #1a1a1a;
             }
+            
             .faq-question {
                 font-size: 1.1rem;
             }
+            
             .faq-question::after {
                 font-size: 1rem;
             }
+            
             .faq-answer {
                 font-size: 1rem;
             }
+            
             .faq-answer.active {
                 max-height: 500px;
             }
+            
             .contact-modal {
                 width: 90%;
                 max-width: 400px;
                 padding: 15px;
             }
+            
             .contact-modal h2 {
                 font-size: 1.8rem;
             }
+            
             .contact-modal .contact-icons {
                 gap: 15px;
             }
+            
             .close-modal {
                 font-size: 1.6rem;
             }
+            
             .faq-close {
                 font-size: 1.6rem;
             }
+            
             .about-content {
                 max-height: 1000px;
             }
+            
             .about-content.active {
                 padding: 15px;
             }
+            
             .language-dropdown-button {
                 padding: 5px 8px;
             }
+            
             .language-dropdown-content a {
                 padding: 8px 15px;
             }
@@ -1006,6 +1087,29 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+    <!-- Górny pasek mobilny (widoczny tylko na urządzeniach mobilnych) -->
+    <div class="mobile-top-bar">
+        <div class="language-dropdown">
+            <button class="language-dropdown-button" aria-label="Zmień język">
+                <img src="globe.png" width="20" height="20" alt="Przełącznik języka" loading="lazy">
+                PL
+            </button>
+            <div class="language-dropdown-content">
+                <a href="index.html" class="active">PL</a>
+                <a href="en.html">EN</a>
+            </div>
+        </div>
+        <a href="tel:+48794483515" class="phone-button">
+            <img src="phone-icon.png" width="20" height="20" alt="Zadzwoń" loading="lazy">
+            Zadzwoń
+        </a>
+        <div class="nav-button disabled">
+            <img src="instagram-icon.png" alt="Ikona Instagrama" loading="lazy">
+            <span class="nav-button-text">Instagram</span>
+        </div>
+    </div>
+
+    <!-- Nagłówek PC (widoczny tylko na większych ekranach) -->
     <header class="sticky-header">
         <div class="header-content">
             <div class="header-left">
@@ -1244,23 +1348,30 @@
                 dropdown.classList.remove('open');
             });
             // Clear hash from URL to prevent scrolling to #contact-section
-            if (window.location.hash) {
-                window.history.replaceState(null, null, window.location.pathname);
+            try {
+                if (window.location.hash) {
+                    window.history.replaceState(null, null, window.location.pathname);
+                }
+            } catch (error) {
+                // Ignore security errors with replaceState
+                console.log('Hash cleared from URL');
             }
         });
 
         document.addEventListener('DOMContentLoaded', () => {
             // Language dropdown toggle
-            const dropdownButton = document.querySelector('.language-dropdown-button');
-            if (dropdownButton) {
-                dropdownButton.addEventListener('click', (event) => {
-                    event.stopPropagation();
-                    const dropdown = event.target.closest('.language-dropdown');
-                    if (dropdown) {
-                        dropdown.classList.toggle('open');
-                    }
-                });
-            }
+            const dropdownButtons = document.querySelectorAll('.language-dropdown-button');
+            dropdownButtons.forEach(dropdownButton => {
+                if (dropdownButton) {
+                    dropdownButton.addEventListener('click', (event) => {
+                        event.stopPropagation();
+                        const dropdown = event.target.closest('.language-dropdown');
+                        if (dropdown) {
+                            dropdown.classList.toggle('open');
+                        }
+                    });
+                }
+            });
 
             // Close dropdown when clicking outside
             document.addEventListener('click', (event) => {
@@ -1271,6 +1382,15 @@
                     }
                 });
             });
+
+            // Logo w nagłówku PC scrolluje do góry
+            const pcLogoLink = document.querySelector('.sticky-header .logo-container');
+            if (pcLogoLink) {
+                pcLogoLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
 
             // Smooth scroll to contact section and prevent hash persistence
             const contactLinks = document.querySelectorAll('.contact-link');
@@ -1283,7 +1403,12 @@
                         target.scrollIntoView({ behavior: 'smooth', block: 'center' });
                         // Remove hash from URL after scrolling
                         setTimeout(() => {
-                            window.history.replaceState(null, null, window.location.pathname);
+                            try {
+                                window.history.replaceState(null, null, window.location.pathname);
+                            } catch (error) {
+                                // Ignore security errors with replaceState
+                                console.log('Hash cleared from URL');
+                            }
                         }, 100);
                     }
                 });
