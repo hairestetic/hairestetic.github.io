@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hair Estetic</title>
-    <meta name="description" content="Hair Estetic - Hair extension services tailored to your style. Operating in Poland, soon in the Netherlands. Contact us to book an appointment.">
+    <meta name="description" content="Hair extension services tailored to your style. Operating in Poland, soon in the Netherlands. Contact us to book an appointment.">
     <meta name="keywords" content="hair extensions, hair salon, hair styling, Hair Estetic, Jaworzno, contact, book appointment">
     <meta name="title" content="Hair Estetic">
     <meta property="og:title" content="Hair Estetic">
@@ -68,7 +68,7 @@
             --light-gray: #a0a0a0;
         }
         html { scroll-behavior: smooth; }
-        body { margin: 0; padding-top: 10px; font-family: 'Lato', sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.8; font-size: 18px; font-weight: 300; box-sizing: border-box; overflow-x: hidden; }
+        body { margin: 0; padding-top: 60px; font-family: 'Lato', sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.8; font-size: 18px; font-weight: 300; box-sizing: border-box; overflow-x: hidden; }
         body.no-scroll { overflow: hidden; }
         .container { max-width: 900px; margin: 0 auto; text-align: center; padding: 0 20px; box-sizing: border-box; }
         
@@ -82,17 +82,17 @@
         .logo-container { display: flex; align-items: center; gap: 15px; text-decoration: none; }
         .logo-img { height: 35px; }
         .logo-text { font-family: 'Great Vibes', cursive; font-size: 1.8rem; font-weight: 400; color: var(--accent-color); }
-        .nav-button { padding: 8px 15px; font-size: 0.8rem; font-weight: 700; border: 1px solid var(--accent-color); border-radius: 5px; background-color: transparent; color: var(--accent-color); cursor: pointer; text-decoration: none; transition: all 0.3s; display: flex; align-items: center; gap: 8px; box-sizing: border-box; }
+        .nav-button { padding: 8px 15px; font-size: 0.8rem; font-weight: 700; border: 1px solid var(--accent-color); border-radius: 5px; background-color: rgba(10, 10, 10, 0.8); backdrop-filter: blur(10px); color: var(--accent-color); cursor: pointer; text-decoration: none; transition: all 0.3s; display: flex; align-items: center; gap: 8px; box-sizing: border-box; }
         .nav-button:hover { background-color: var(--accent-color); color: var(--bg-color); }
         .nav-button.disabled { pointer-events: none; opacity: 0.6; cursor: default; }
-        .nav-button.disabled:hover { background-color: transparent; color: var(--accent-color); transform: none; box-shadow: none; }
+        .nav-button.disabled:hover { background-color: rgba(10, 10, 10, 0.8); color: var(--accent-color); transform: none; box-shadow: none; }
         .nav-button img { width: 20px; height: 20px; }
         .nav-button-text { display: inline; }
         
         .hero {
             position: relative;
             z-index: 5;
-            min-height: 60vh;
+            min-height: 100vh;
             width: 100%;
             margin: 0;
             padding: 0;
@@ -107,22 +107,22 @@
             box-sizing: border-box;
             overflow: hidden;
         }
-        .mobile-header {
-            display: none;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            padding: 5px 15px;
-            box-sizing: border-box;
-            position: relative;
-            z-index: 10;
-            background-color: transparent;
-        }
         @keyframes gradientBackground {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
+        .mobile-nav {
+            display: none;
+            width: 100%;
+            max-width: 1200px;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .mobile-nav-left, .mobile-nav-right { display: flex; align-items: center; }
+        .mobile-nav-right { gap: 10px; }
         .hero-logo {
             max-width: 400px;
             max-height: 45vh;
@@ -170,6 +170,12 @@
             margin: 8px auto;
             will-change: transform;
         }
+        .cta-button:not(.disabled):hover {
+            background: #E0C34A;
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+            color: var(--bg-color);
+        }
         .cta-button.about-toggle::after {
             content: '\2B9F';
             font-size: 1.3rem;
@@ -185,7 +191,7 @@
         .about-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s ease-out, opacity 0.5s ease-out, margin-bottom 0.5s ease-out;
+            transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
             opacity: 0;
             background: linear-gradient(135deg, #111111, #1a1a1a);
             border-radius: 8px;
@@ -649,8 +655,8 @@
         .contact-icon:hover {
             background-color: var(--accent-color);
             color: var(--bg-color);
-            transform: scale(1.05);
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            transform: scale(1.03);
+            box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
         }
         .contact-icon.disabled {
             pointer-events: none;
@@ -683,10 +689,10 @@
             margin-bottom: 20px;
         }
         .footer-logo {
-            height: 80px;
+            height: 70px;
         }
         .footer-brand-text {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--light-gray);
             margin: 0;
             font-style: italic;
@@ -697,12 +703,12 @@
         }
         .business-info h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--accent-color);
             margin-bottom: 10px;
         }
         .business-info p {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: var(--light-gray);
             line-height: 1.6;
             margin: 0;
@@ -722,8 +728,8 @@
             opacity: 1;
             transform: none;
         }
-        .service-item:nth-child(odd).reveal { opacity: 0; transform: translateX(-50px); }
-        .service-item:nth-child(even).reveal { opacity: 0; transform: translateX(50px); }
+        .service-item:nth-child(odd).reveal { transform: translateX(-30px); }
+        .service-item:nth-child(even).reveal { transform: translateX(30px); }
         .service-item:nth-child(1).reveal { transition-delay: 0.2s; }
         .service-item:nth-child(2).reveal { transition-delay: 0.4s; }
         .service-item:nth-child(3).reveal { transition-delay: 0.6s; }
@@ -785,272 +791,109 @@
             display: block;
         }
 
-        @media (min-width: 769px) {
-            .language-dropdown-button {
-                font-size: 1.1rem;
-                padding: 8px 15px;
-            }
-            .language-dropdown-content a {
-                padding: 10px 20px;
-                font-size: 1.1rem;
-            }
-            .slider-container {
-                max-width: 600px;
-            }
-            .cta-button:not(.disabled):hover {
-                background: #E0C34A;
-                transform: scale(1.05);
-                box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-                color: var(--bg-color);
-            }
-        }
-
         @media (max-width: 768px) {
-            body {
-                font-size: 16px;
-                padding-top: 0;
+            body { padding-top: 5px; font-size: 16px; }
+            .sticky-header { display: none; }
+            .mobile-nav { 
+                display: flex; 
+                margin-bottom: 10px; 
             }
-            .container {
-                padding: 0 15px;
+            .nav-button { 
+                padding: 5px 8px; 
+                font-size: 0.7rem; 
+                background: rgba(10, 10, 10, 0.8); 
+                backdrop-filter: blur(10px); 
+                border: 1px solid var(--accent-color); 
+                border-radius: 5px; 
             }
-            .sticky-header {
-                display: none;
+            .nav-button img { width: 16px; height: 16px; }
+            .nav-button-text { display: none; }
+            .nav-button.disabled::after { content: '🔜'; font-size: 0.8rem; margin-left: 5px; }
+            .coming-soon { display: none; }
+            .language-dropdown-button { font-size: 0.9rem; padding: 5px 8px; background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(10px); border: 1px solid var(--accent-color); border-radius: 5px; }
+            .language-dropdown-content { min-width: 80px; }
+            .language-dropdown-content a { padding: 6px 12px; font-size: 0.8rem; }
+            .hero { min-height: 70vh; padding: 5px 0; }
+            .hero-logo { max-width: 350px; max-height: 38vh; margin: 5px auto; }
+            .hero p { font-size: 1rem; margin-bottom: 5px; }
+            .cta-button { 
+                padding: 12px 25px; 
+                font-size: 1rem; 
+                margin: 5px auto; 
+                box-shadow: 0 2px 4px rgba(212, 175, 55, 0.2); 
             }
-            .mobile-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-                padding: 5px 15px;
-                box-sizing: border-box;
-                position: relative;
-                z-index: 10;
-                background-color: transparent;
+            .cta-button:not(.disabled):hover { 
+                transform: scale(1.03); 
+                box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3); 
+                background: #E0C34A; 
+                color: var(--bg-color); 
             }
-            .mobile-header .nav-buttons {
-                display: flex;
-                gap: 10px;
+            .cta-button.about-toggle::after { 
+                content: '\25BC'; 
+                font-size: 1rem; 
+                margin-left: 6px; 
             }
-            .language-dropdown-button {
-                padding: 5px 8px;
-                font-size: 0.9rem;
+            .about-content { padding: 0 10px; }
+            .about-content.active { 
+                max-height: 1000px; 
+                padding: 10px; 
+                margin-bottom: 10px; 
             }
-            .language-dropdown-content a {
-                padding: 8px 15px;
-                font-size: 0.9rem;
+            .about-image { max-width: 200px; margin-bottom: 10px; }
+            .about-content .section-subtitle { font-size: 1rem; margin-bottom: 10px; }
+            .about-content .cta-button { margin-top: 10px; }
+            .section, .style-craft-section, .services-section, .gallery-section, .faq-section, .contact-section, .footer { 
+                padding: 20px 15px; 
             }
-            .nav-button {
-                padding: 5px 8px;
+            .section-title { font-size: 2rem; margin-bottom: 10px; }
+            .section-title::after { width: 30px; margin: 5px auto; }
+            .section-title:hover::after { width: 60px; }
+            .section-subtitle { font-size: 0.9rem; margin-bottom: 10px; }
+            .services-list { gap: 10px; }
+            .service-item { max-width: 100%; margin: 0 auto; }
+            .service-item:nth-child(odd) { 
+                margin-left: 0; 
+                margin-right: 0; 
+                transform: translateX(-20px); 
             }
-            .nav-button img {
-                width: 16px;
-                height: 16px;
+            .service-item:nth-child(even) { 
+                margin-right: 0; 
+                margin-left: 0; 
+                transform: translateX(20px); 
             }
-            .nav-button-text {
-                display: none;
-            }
-            .nav-button.disabled::after {
-                content: '🔜';
-                font-size: 0.8rem;
-                margin-left: 5px;
-            }
-            .coming-soon {
-                display: none;
-            }
-            .hero {
-                min-height: 40vh;
-                width: 100%;
-                padding: 0;
-                position: relative;
-                padding-top: 20px;
-            }
-            .hero-logo {
-                max-width: 320px;
-                max-height: 38vh;
-                margin: 2px auto;
-            }
-            .hero p {
-                font-size: 1.1rem;
-                margin-bottom: 2px;
-            }
-            .cta-button {
-                padding: 15px 30px;
-                font-size: 1.1rem;
-                margin: 2px auto;
-                box-shadow: 0 2px 6px rgba(212, 175, 55, 0.2);
-            }
-            .cta-button:not(.disabled):hover {
-                transform: scale(1.03);
-                box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
-                background: #E0C34A;
-                color: var(--bg-color);
-            }
-            .about-content {
-                margin: 0 auto;
-                max-height: 0;
-                padding: 0;
-                transition: max-height 0.5s ease-out, opacity 0.5s ease-out, padding 0.5s ease-out, margin-bottom 0.5s ease-out;
-            }
-            .about-content.active {
-                max-height: 1000px;
-                padding: 10px;
-                margin-bottom: 60px;
-            }
-            .style-craft-section {
-                margin-top: 20px;
-                padding-top: 20px;
-            }
-            .section-title {
-                font-size: 2.2rem;
-            }
-            .section-title::after {
-                width: 40px;
-            }
-            .section-title:hover::after {
-                width: 80px;
-            }
-            .section-subtitle {
-                font-size: 1.1rem;
-            }
-            .services-section {
-                display: block;
-            }
-            .services-list {
-                display: flex;
-                flex-direction: column;
-                gap: 15px;
-                align-items: center;
-            }
-            .service-item {
-                max-width: 90%;
-                display: flex;
-                align-items: flex-start;
-                gap: 10px;
-                margin: 0 auto;
-            }
-            .service-item:nth-child(odd),
-            .service-item:nth-child(even) {
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .service-item:nth-child(odd).reveal {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            .service-item:nth-child(even).reveal {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            .service-item.reveal.visible {
-                opacity: 1;
-                transform: translateX(0);
-            }
-            .service-item:nth-child(1).reveal { transition-delay: 0.2s; }
-            .service-item:nth-child(2).reveal { transition-delay: 0.4s; }
-            .service-item:nth-child(3).reveal { transition-delay: 0.6s; }
-            .service-item:nth-child(4).reveal { transition-delay: 0.8s; }
-            .service-icon {
-                width: 32px;
-                height: 32px;
-            }
-            .service-text h3 {
-                font-size: 1.3rem;
-            }
-            .service-text p {
-                font-size: 0.9rem;
-            }
-            .about-image {
-                max-width: 250px;
-            }
-            .about-content .section-subtitle {
-                font-size: 1.1rem;
-            }
-            .slider-container {
-                max-width: 100%;
-            }
-            .slider-label .top-label {
-                font-size: 0.7rem;
-                padding: 3px 8px;
-            }
-            .slider-label .scroll-prompt {
-                font-size: 1.2rem;
-                padding: 4px 8px;
-            }
-            .slider img {
-                width: 32px;
-                height: 32px;
-            }
-            .contact-icon {
-                width: 120px;
-                min-height: 100px;
-            }
-            .contact-icon img {
-                width: 30px;
-                height: 30px;
-            }
-            .contact-icon.whatsapp img,
-            .contact-icon.messenger img {
-                width: 36px;
-                height: 36px;
-            }
-            .contact-icon span {
-                font-size: 0.8rem;
-            }
-            .contact-icon:hover {
-                transform: scale(1.03);
-                box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
-            }
-            .faq-modal {
-                width: 90%;
-                max-height: 70vh;
-            }
-            .faq-modal-header {
-                padding: 8px 10px;
-                border-radius: 12px 12px 0 0;
-            }
-            .faq-modal h3 {
-                font-size: 1.6rem;
-            }
-            .faq-items {
-                padding: 10px;
-                max-height: calc(70vh - 50px);
-            }
-            .faq-spacer {
-                height: 40px;
-            }
-            .faq-question {
-                font-size: 1rem;
-                padding: 8px;
-            }
-            .faq-question::after {
-                content: '\25BC';
-                font-size: 0.9rem;
-            }
-            .faq-answer {
-                font-size: 0.9rem;
-                padding: 0 8px;
-            }
-            .faq-answer.active {
-                max-height: 300px;
-                padding: 8px;
-            }
-            .contact-modal {
-                width: 90%;
-                max-width: 400px;
-                padding: 15px;
-            }
-            .contact-modal h2 {
-                font-size: 1.8rem;
-            }
-            .contact-modal .contact-icons {
-                gap: 15px;
-            }
-            .close-modal {
-                font-size: 1.6rem;
-            }
-            .faq-close {
-                font-size: 1.6rem;
-            }
+            .service-item.reveal.visible { transform: translateX(0); }
+            .service-icon { width: 32px; height: 32px; }
+            .service-text h3 { font-size: 1.2rem; }
+            .service-text p { font-size: 0.8rem; }
+            .gallery-container { gap: 20px; }
+            .gallery-quote { font-size: 0.9rem; margin-top: 10px; }
+            .slider-container { max-width: 100%; }
+            .slider img { width: 28px; height: 28px; }
+            .slider-label .top-label { font-size: 0.6rem; padding: 2px 6px; }
+            .slider-label .scroll-prompt { font-size: 1rem; padding: 3px 6px; }
+            .contact-modal { width: 90%; max-width: 400px; padding: 15px; }
+            .contact-modal h2 { font-size: 1.8rem; margin-bottom: 10px; }
+            .contact-modal .contact-icons { gap: 15px; margin-top: 10px; }
+            .contact-icon { width: 100px; min-height: 90px; padding: 8px; }
+            .contact-icon img { width: 28px; height: 28px; margin-bottom: 8px; }
+            .contact-icon.whatsapp img, .contact-icon.messenger img { width: 32px; height: 32px; }
+            .contact-icon span { font-size: 0.7rem; }
+            .contact-icon:hover { transform: scale(1.03); box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3); }
+            .faq-modal { width: 95%; max-height: 90vh; }
+            .faq-modal-header { padding: 10px 15px; }
+            .faq-modal h3 { font-size: 1.8rem; }
+            .faq-items { padding: 10px; max-height: calc(90vh - 50px); }
+            .faq-spacer { height: 50px; }
+            .faq-item { margin-bottom: 10px; }
+            .faq-question { font-size: 1.1rem; padding: 10px; }
+            .faq-question::after { font-size: 1rem; }
+            .faq-answer { font-size: 1rem; }
+            .faq-answer.active { max-height: 500px; padding: 10px; }
+            .footer-logo-container { margin-bottom: 10px; }
+            .footer-logo { height: 60px; }
+            .footer-brand-text { font-size: 0.9rem; }
+            .business-info h3 { font-size: 1.2rem; }
+            .business-info p { font-size: 0.7rem; }
         }
     </style>
 </head>
@@ -1075,7 +918,7 @@
                 </div>
             </div>
             <div class="header-center">
-                <a href="#top" class="logo-container">
+                <a href="#" class="logo-container">
                     <img src="logo.png" alt="Hair Estetic Logo" class="logo-img" loading="lazy">
                     <span class="logo-text">Hair Estetic</span>
                 </a>
@@ -1089,38 +932,6 @@
             </div>
         </div>
     </header>
-
-    <section class="hero" id="top">
-        <div class="mobile-header">
-            <div class="language-dropdown">
-                <button class="language-dropdown-button" aria-label="Change language">
-                    <img src="globe.png" width="16" height="16" alt="Language switcher" loading="lazy">
-                    EN
-                </button>
-                <div class="language-dropdown-content">
-                    <a href="index.html">PL</a>
-                    <a href="en.html" class="active">EN</a>
-                </div>
-            </div>
-            <div class="nav-buttons">
-                <a href="tel:+48794483515" class="nav-button">
-                    <img src="phone-icon.png" alt="Phone Icon" loading="lazy">
-                </a>
-                <div class="nav-button disabled">
-                    <img src="instagram-icon.png" alt="Instagram Icon" loading="lazy">
-                    <span class="coming-soon">Coming Soon</span>
-                </div>
-            </div>
-        </div>
-        <img src="logo-typography.png" alt="Hair Estetic Typography Logo" class="hero-logo reveal" loading="lazy">
-        <p class="reveal">Ready to enhance your beauty with new hair? Contact me to discover your uniqueness.</p>
-        <button class="cta-button about-toggle reveal">About Me</button>
-        <div class="about-content">
-            <img src="about-image.jpg" alt="About Me - Image" class="about-image reveal" loading="lazy">
-            <p class="section-subtitle reveal">My name is Iwona Wach, and I created Hair Estetic – a place where beautiful hair is an art form. I specialize in keratin hair extensions to ensure a natural, healthy look that boosts your confidence daily. I work in a cozy, comfortable atmosphere or visit clients who prefer transformations at home. Soon, Hair Estetic will expand to the Netherlands, because I believe women worldwide deserve luxury at its finest. Perfection in every strand – that’s my promise.</p>
-            <a href="#contact-section" class="cta-button reveal contact-link">Contact</a>
-        </div>
-    </section>
 
     <div class="contact-overlay"></div>
     <div class="contact-modal">
@@ -1206,10 +1017,46 @@
         </div>
     </div>
 
+    <section class="hero">
+        <div class="mobile-nav">
+            <div class="mobile-nav-left">
+                <div class="language-dropdown">
+                    <button class="language-dropdown-button" aria-label="Change language">
+                        <img src="globe.png" width="16" height="16" alt="Language switcher" loading="lazy">
+                        EN
+                    </button>
+                    <div class="language-dropdown-content">
+                        <a href="index.html">PL</a>
+                        <a href="en.html" class="active">EN</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-nav-right">
+                <a href="tel:+48794483515" class="nav-button">
+                    <img src="phone-icon.png" alt="Phone Icon" loading="lazy">
+                    <span class="nav-button-text">Call</span>
+                </a>
+                <div class="nav-button disabled">
+                    <img src="instagram-icon.png" alt="Instagram Icon" loading="lazy">
+                    <span class="nav-button-text">Visit our Instagram</span>
+                    <span class="coming-soon">Coming Soon</span>
+                </div>
+            </div>
+        </div>
+        <img src="logo-typography.png" alt="Hair Estetic Typography Logo" class="hero-logo reveal" loading="lazy">
+        <p class="reveal">Ready to enhance your beauty with new hair? Contact me to discover your uniqueness.</p>
+        <button class="cta-button about-toggle reveal">About Me</button>
+        <div class="about-content">
+            <img src="about-image.jpg" alt="About Me - Image" class="about-image reveal" loading="lazy">
+            <p class="section-subtitle reveal">My name is Iwona Wach, and I created Hair Estetic – a place where beautiful hair is an art form. I specialize in keratin hair extensions to ensure a natural, healthy look that boosts your confidence daily. I work in a cozy, comfortable atmosphere or visit clients who prefer transformations at home. Soon, Hair Estetic will expand to the Netherlands, because I believe women worldwide deserve luxury at its finest. Perfection in every strand – that’s my promise.</p>
+            <a href="#contact-section" class="cta-button reveal contact-link">Contact</a>
+        </div>
+    </section>
+
     <main>
         <section class="section style-craft-section">
             <div class="container">
-                <h2 class="section-title reveal">Your Style, My Craft</h2>
+                <h2 class="section-title reveal">Your Style, Our Craft</h2>
                 <p class="section-subtitle reveal">I created Hair Estetic because I believe hair extensions are an art form of creating beauty in its purest form. My attention to detail and precision at every stage guarantee a result that impresses with naturalness, lightness, and elegance, boosting your confidence and refreshing your look. It’s an experience that makes you feel special every day.</p>
             </div>
         </section>
@@ -1307,28 +1154,29 @@
     </footer>
 
     <script>
-        // Disable scroll restoration and force scroll to top on load
+        // Disable scroll restoration
         if ('scrollRestoration' in window.history) {
             window.history.scrollRestoration = 'manual';
         }
         window.addEventListener('load', () => {
             window.scrollTo(0, 0);
-            // Reset dropdown state on page load
+            // Reset dropdown state
             const dropdowns = document.querySelectorAll('.language-dropdown');
             dropdowns.forEach(dropdown => {
                 dropdown.classList.remove('open');
             });
-            // Clear hash from URL safely
-            if (window.location.hash && window.location.origin !== 'null' && window.location.href !== 'about:srcdoc') {
-                try {
-                    history.replaceState(null, null, window.location.pathname);
-                } catch (e) {
-                    console.warn('Unable to modify history state:', e);
-                }
-            }
         });
 
         document.addEventListener('DOMContentLoaded', () => {
+            // Logo scroll to top
+            const logoLink = document.querySelector('.logo-container');
+            if (logoLink) {
+                logoLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
             // Language dropdown toggle
             const dropdownButtons = document.querySelectorAll('.language-dropdown-button');
             dropdownButtons.forEach(button => {
@@ -1351,24 +1199,7 @@
                 });
             });
 
-            // Scroll to top on logo click for desktop
-            const logoLink = document.querySelector('.header-center .logo-container');
-            if (logoLink) {
-                logoLink.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                    // Clear hash safely
-                    if (window.location.origin !== 'null' && window.location.href !== 'about:srcdoc') {
-                        try {
-                            history.replaceState(null, null, window.location.pathname);
-                        } catch (e) {
-                            console.warn('Unable to modify history state:', e);
-                        }
-                    }
-                });
-            }
-
-            // Smooth scroll to contact section and prevent hash persistence
+            // Smooth scroll to contact section
             const contactLinks = document.querySelectorAll('.contact-link');
             contactLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
@@ -1377,35 +1208,22 @@
                     const target = document.querySelector(targetId);
                     if (target) {
                         target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        // Clear hash safely
-                        if (window.location.origin !== 'null' && window.location.href !== 'about:srcdoc') {
-                            setTimeout(() => {
-                                try {
-                                    history.replaceState(null, null, window.location.pathname);
-                                } catch (e) {
-                                    console.warn('Unable to modify history state:', e);
-                                }
-                            }, 100);
-                        }
                     }
                 });
             });
 
-            // About section toggle with dynamic space management
+            // About section toggle with scroll
             const aboutToggle = document.querySelector('.about-toggle');
             const aboutContent = document.querySelector('.about-content');
             if (aboutToggle && aboutContent) {
                 aboutToggle.addEventListener('click', () => {
-                    const isActive = aboutContent.classList.contains('active');
                     aboutContent.classList.toggle('active');
                     aboutToggle.classList.toggle('active');
-                    if (!isActive) {
-                        aboutContent.style.maxHeight = `${aboutContent.scrollHeight}px`;
+                    if (aboutContent.classList.contains('active')) {
                         setTimeout(() => {
                             aboutContent.scrollIntoView({ behavior: 'smooth', block: 'center' });
                         }, 300);
                     } else {
-                        aboutContent.style.maxHeight = '0';
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                     }
                 });
@@ -1416,7 +1234,6 @@
             const faqOverlay = document.querySelector('.faq-overlay');
             const faqModal = document.querySelector('.faq-modal');
             const faqClose = document.querySelector('.faq-close');
-
             if (faqButton && faqOverlay && faqModal && faqClose) {
                 faqButton.addEventListener('click', () => {
                     faqOverlay.classList.add('active');
@@ -1440,7 +1257,6 @@
             const contactOverlay = document.querySelector('.contact-overlay');
             const contactModal = document.querySelector('.contact-modal');
             const closeModal = document.querySelector('.close-modal');
-
             if (contactButtons && contactOverlay && contactModal && closeModal) {
                 contactButtons.forEach(button => {
                     button.addEventListener('click', () => {
@@ -1579,7 +1395,7 @@
                 }
             });
 
-            // FAQ accordion functionality with auto-scroll for last question
+            // FAQ accordion functionality
             const faqQuestions = document.querySelectorAll('.faq-question');
             const faqItems = document.querySelector('.faq-items');
             faqQuestions.forEach((question, index) => {
