@@ -747,12 +747,13 @@
             color: var(--accent-color);
             font-size: 1rem;
             cursor: pointer;
-            padding: 5px 10px;
+            padding: 8px 15px;
             display: flex;
             align-items: center;
             gap: 5px;
             transition: all 0.3s ease;
             font-family: 'Playfair Display', serif;
+            min-width: 100px;
         }
         .language-dropdown-button:hover {
             transform: scale(1.1);
@@ -769,15 +770,18 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
             z-index: 1001;
             min-width: 100px;
+            overflow: hidden;
         }
         .language-dropdown-content a {
             display: block;
-            padding: 8px 15px;
+            padding: 8px 10px;
             color: var(--text-color);
             text-decoration: none;
             font-family: 'Playfair Display', serif;
             font-size: 1rem;
             transition: background 0.3s ease;
+            box-sizing: border-box;
+            width: 100%;
         }
         .language-dropdown-content a:hover {
             background-color: var(--accent-color);
@@ -807,6 +811,7 @@
                 border: 1px solid var(--accent-color); 
                 border-radius: 5px; 
                 min-width: 50px;
+                width: 50px;
                 justify-content: center;
             }
             .nav-button img { width: 18px; height: 18px; }
@@ -821,10 +826,19 @@
                 border: 1px solid var(--accent-color); 
                 border-radius: 5px; 
                 min-width: 50px;
+                width: 50px;
                 justify-content: center;
             }
-            .language-dropdown-content { min-width: 80px; }
-            .language-dropdown-content a { padding: 6px 12px; font-size: 0.8rem; }
+            .language-dropdown-content { 
+                min-width: 80px; 
+                overflow: hidden; 
+            }
+            .language-dropdown-content a { 
+                padding: 6px 8px; 
+                font-size: 0.8rem; 
+                box-sizing: border-box; 
+                width: 100%; 
+            }
             .hero { min-height: 70vh; }
             .hero-logo { 
                 max-width: 350px; 
