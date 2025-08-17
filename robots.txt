@@ -1,3 +1,4 @@
+# robots.txt
 User-agent: *
 Allow: /
 Sitemap: https://www.hair-estetic.com/sitemap.xml
