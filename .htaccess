@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTP_HOST} ^hair-estetic\.com$ [NC]
+    RewriteRule ^(.*)$ https://www.hair-estetic.com/$1 [L,R=301]
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+<IfModule mod_headers.c>
+    Header set Cache-Control "max-age=31536000, public"
+    Header set Vary "Accept-Encoding"
+</IfModule>
+<IfModule mod_mime.c>
+    AddType image/x-icon .ico
+    AddType image/png .png
+    AddType image/svg+xml .svg
+</IfModule>
