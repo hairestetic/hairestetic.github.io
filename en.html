@@ -4,32 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hair Estetic</title>
-    <meta name="description" content="Hair extension services tailored to your style. Operating in Poland, soon in the Netherlands. Contact us to book an appointment.">
-    <meta name="keywords" content="hair extensions, hair salon, hair styling, Hair Estetic, Jaworzno, contact, book appointment">
+    <meta name="description" content="Professional keratin hair extensions in Jaworzno. Hair Estetic offers natural, long-lasting hairstyles that enhance your beauty. Book your appointment today!">
+    <meta name="keywords" content="keratin hair extensions, Hair Estetic Jaworzno, hair styling, natural hairstyles, Iwona Wach, hair salon Jaworzno, hair extensions Netherlands">
     <meta name="title" content="Hair Estetic">
     <meta property="og:title" content="Hair Estetic">
-    <meta property="og:description" content="Hair extension services tailored to your style. Operating in Poland, soon in the Netherlands. Contact us to book an appointment.">
+    <meta property="og:description" content="Professional keratin hair extensions in Jaworzno. Hair Estetic offers natural, long-lasting hairstyles that enhance your beauty. Book your appointment today!">
     <meta property="og:image" content="https://www.hair-estetic.com/logo.png">
     <meta property="og:url" content="https://www.hair-estetic.com/en.html">
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#0a0a0a">
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/png" href="https://www.hair-estetic.com/favicon-96x96.png" sizes="96x96" crossorigin="anonymous" />
+    <link rel="icon" type="image/png" href="https://www.hair-estetic.com/favicon-16x16.png" sizes="16x16" crossorigin="anonymous" />
+    <link rel="icon" type="image/svg+xml" href="https://www.hair-estetic.com/favicon.svg" crossorigin="anonymous" />
+    <link rel="shortcut icon" href="https://www.hair-estetic.com/favicon.ico" crossorigin="anonymous" />
+    <link rel="apple-touch-icon" href="https://www.hair-estetic.com/apple-touch-icon.png" crossorigin="anonymous" />
+    <link rel="manifest" href="https://www.hair-estetic.com/site.webmanifest" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="alternate" hreflang="pl" href="https://www.hair-estetic.com/">
     <link rel="alternate" hreflang="en" href="https://www.hair-estetic.com/en.html">
+    <link rel="sitemap" href="https://www.hair-estetic.com/sitemap.xml" />
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Hair Estetic",
-        "description": "Hair extension services tailored to your style. Operating in Poland, soon in the Netherlands. Contact us to book an appointment.",
+        "description": "Professional keratin hair extensions in Jaworzno. Hair Estetic offers natural, long-lasting hairstyles that enhance your beauty. Book your appointment today!",
         "url": "https://www.hair-estetic.com/en.html",
         "inLanguage": "en"
     }
@@ -48,7 +49,18 @@
             "addressLocality": "Jaworzno",
             "addressCountry": "PL"
         },
-        "url": "https://www.hair-estetic.com/"
+        "url": "https://www.hair-estetic.com/en.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Quotation",
+        "text": "Hair is the most exquisite jewelry a woman wears every day.",
+        "author": {
+            "@type": "Person",
+            "name": "Sophia Loren"
+        }
     }
     </script>
     <!-- Google tag (gtag.js) -->
@@ -150,6 +162,16 @@
             font-style: italic;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
+        .hero .author {
+            font-size: 0.8rem;
+            color: var(--light-gray);
+            font-style: italic;
+            margin: 0 auto 30px;
+            max-width: 650px;
+            position: relative;
+            z-index: 9;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
         .cta-button {
             padding: 18px 35px;
             font-size: 1.3rem;
@@ -178,8 +200,16 @@
             box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
             color: var(--bg-color);
         }
+        .cta-button.about-toggle {
+            animation: pulse 2s infinite ease-in-out;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
         .cta-button.about-toggle::after {
-            content: '\2B9F';
+            content: '\25BC';
             font-size: 1.3rem;
             margin-left: 10px;
             display: inline-block;
@@ -818,7 +848,6 @@
                 overflow: hidden;
             }
             .nav-button img { width: 16px; height: 16px; }
-            .nav-button.disabled img { margin-right: -2px; }
             .nav-button-text { display: none; }
             .nav-button.disabled::after { content: '🔜'; font-size: 0.8rem; margin-left: 5px; }
             .coming-soon { display: none; }
@@ -851,7 +880,8 @@
                 aspect-ratio: 1/1; 
                 margin: 5px auto; 
             }
-            .hero p { font-size: 1rem; margin-bottom: 5px; }
+            .hero p { font-size: 1rem; margin-bottom: 15px; }
+            .hero .author { font-size: 0.7rem; margin-bottom: 15px; }
             .cta-button { 
                 padding: 12px 25px; 
                 font-size: 1rem; 
@@ -959,26 +989,26 @@
             <div class="header-left">
                 <div class="language-dropdown">
                     <button class="language-dropdown-button" aria-label="Change language">
-                        <img src="globe.png" width="20" height="20" alt="Language switcher" loading="lazy">
+                        <img src="https://www.hair-estetic.com/globe.png" width="20" height="20" alt="Language switcher" loading="lazy">
                         EN
                     </button>
                     <div class="language-dropdown-content">
-                        <a href="index.html">PL</a>
-                        <a href="en.html" class="active">EN</a>
+                        <a href="https://www.hair-estetic.com/index.html">PL</a>
+                        <a href="https://www.hair-estetic.com/en.html" class="active">EN</a>
                     </div>
                 </div>
             </div>
             <div class="header-center">
                 <a href="#" class="logo-container">
-                    <img src="logo.png" alt="Hair Estetic Logo" class="logo-img" loading="lazy">
+                    <img src="https://www.hair-estetic.com/logo.png" alt="Hair Estetic logo" class="logo-img" loading="lazy">
                     <span class="logo-text">Hair Estetic</span>
                 </a>
             </div>
             <div class="header-right">
                 <div class="nav-button disabled">
-                    <img src="instagram-icon.png" alt="Instagram Icon" loading="lazy">
-                    <span class="nav-button-text">Visit our Instagram</span>
-                    <span class="coming-soon">Coming Soon</span>
+                    <img src="https://www.hair-estetic.com/instagram-icon.png" alt="Instagram icon" loading="lazy">
+                    <span class="nav-button-text">Instagram</span>
+                    <span class="coming-soon">Coming soon</span>
                 </div>
             </div>
         </div>
@@ -987,24 +1017,24 @@
     <div class="contact-overlay"></div>
     <div class="contact-modal">
         <span class="close-modal">&times;</span>
-        <h2>Choose Your Contact Method</h2>
+        <h2>Choose a contact method</h2>
         <div class="contact-icons">
             <a href="tel:+48794483515" class="contact-icon">
-                <img src="phone-icon.png" alt="Phone Icon" loading="lazy">
+                <img src="https://www.hair-estetic.com/phone-icon.png" alt="Phone icon" loading="lazy">
                 <span>Call</span>
             </a>
             <a href="mailto:studio.hairestetic@gmail.com?subject=Inquiry from Hair Estetic" class="contact-icon email-link">
-                <img src="email-icon.png" alt="Email Icon" loading="lazy">
+                <img src="https://www.hair-estetic.com/email-icon.png" alt="Email icon" loading="lazy">
                 <span>Email</span>
             </a>
             <a href="https://wa.me/48794483515" class="contact-icon whatsapp">
-                <img src="whatsapp-icon.png" alt="WhatsApp Icon" loading="lazy">
+                <img src="https://www.hair-estetic.com/whatsapp-icon.png" alt="WhatsApp icon" loading="lazy">
                 <span>WhatsApp</span>
             </a>
             <div class="contact-icon disabled messenger">
-                <img src="messenger-icon.png" alt="Messenger Icon" loading="lazy">
+                <img src="https://www.hair-estetic.com/messenger-icon.png" alt="Messenger icon" loading="lazy">
                 <span>Messenger</span>
-                <span class="coming-soon">Coming Soon</span>
+                <span class="coming-soon">Coming soon</span>
             </div>
         </div>
     </div>
@@ -1017,52 +1047,44 @@
         </div>
         <div class="faq-items">
             <div class="faq-item">
-                <button class="faq-question">How long does a hair extension procedure take?</button>
+                <button class="faq-question">How long does the hair extension procedure take?</button>
                 <div class="faq-answer">The procedure typically takes 2 to 4 hours, depending on the technique and the amount of hair being extended.</div>
             </div>
             <div class="faq-item">
                 <button class="faq-question">Is hair extension safe for natural hair?</button>
-                <div class="faq-answer">Yes, we use safe techniques that, with proper care, minimize damage to your natural hair.</div>
+                <div class="faq-answer">Yes, I use safe techniques that minimize damage to natural hair with proper care.</div>
             </div>
             <div class="faq-item">
                 <button class="faq-question">How can I book an appointment?</button>
-                <div class="faq-answer">Contact us via phone, email, or WhatsApp to schedule a convenient time.</div>
+                <div class="faq-answer">Contact me via phone, email, or WhatsApp to choose a convenient time.</div>
             </div>
             <div class="faq-item">
                 <button class="faq-question">What hair extension techniques do you offer?</button>
-                <div class="faq-answer">We offer various techniques, such as keratin bonding, tape-in, and micro-ring extensions, tailored to your needs.</div>
+                <div class="faq-answer">I specialize in keratin hair extensions.</div>
             </div>
             <div class="faq-item">
                 <button class="faq-question">How long do hair extensions last?</button>
                 <div class="faq-answer">With proper care, hair extensions can last from 2 to 6 months.</div>
             </div>
             <div class="faq-item">
-                <button class="faq-question">Can I dye my hair extensions?</button>
-                <div class="faq-answer">Yes, but we recommend a consultation to choose the right dye and technique.</div>
+                <button class="faq-question">Can I dye my extended hair?</button>
+                <div class="faq-answer">Yes, but I recommend a consultation to choose the right dye and technique.</div>
             </div>
             <div class="faq-item">
-                <button class="faq-question">How do I care for my hair extensions?</button>
-                <div class="faq-answer">We recommend using gentle shampoos, avoiding hot tools without protection, and regular brushing with a specialized brush.</div>
+                <button class="faq-question">How to care for extended hair?</button>
+                <div class="faq-answer">I recommend regular brushing, using gentle SLS/SLES-free shampoos, avoiding high heat during styling, and not using oily products near keratin bonds.</div>
             </div>
             <div class="faq-item">
                 <button class="faq-question">Do you offer consultations before the procedure?</button>
-                <div class="faq-answer">Yes, we offer free consultations to discuss your needs and choose the best method.</div>
+                <div class="faq-answer">Yes, I offer free consultations to discuss your needs and choose the best method.</div>
             </div>
             <div class="faq-item">
                 <button class="faq-question">What are the costs of hair extensions?</button>
-                <div class="faq-answer">Costs depend on the technique and hair length. Contact us for a detailed quote.</div>
+                <div class="faq-answer">Costs depend on the technique and hair length. Contact me for a detailed quote.</div>
             </div>
             <div class="faq-item">
-                <button class="faq-question">Does hair extension hurt?</button>
-                <div class="faq-answer">No, the procedure is painless, though slight discomfort may be felt during application.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">Do I need to buy hair before the procedure, or does the stylist choose the hair?</button>
-                <div class="faq-answer">We can provide hair tailored to your needs, but you can also bring your own after consultation.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">Can I bring my own hair, or must I use hair chosen by the stylist?</button>
-                <div class="faq-answer">You can bring your own hair, provided it meets our quality standards. Please consult with us beforehand.</div>
+                <button class="faq-question">Do I need to buy hair before the procedure, or do you provide it?</button>
+                <div class="faq-answer">I can provide hair tailored to your needs, but you can also bring your own after consultation.</div>
             </div>
             <div class="faq-spacer"></div>
         </div>
@@ -1073,75 +1095,75 @@
             <div class="mobile-nav-left">
                 <div class="language-dropdown">
                     <button class="language-dropdown-button" aria-label="Change language">
-                        <img src="globe.png" width="16" height="16" alt="Language switcher" loading="lazy">
+                        <img src="https://www.hair-estetic.com/globe.png" width="16" height="16" alt="Language switcher" loading="lazy">
                         EN
                     </button>
                     <div class="language-dropdown-content">
-                        <a href="index.html">PL</a>
-                        <a href="en.html" class="active">EN</a>
+                        <a href="https://www.hair-estetic.com/index.html">PL</a>
+                        <a href="https://www.hair-estetic.com/en.html" class="active">EN</a>
                     </div>
                 </div>
             </div>
             <div class="mobile-nav-right">
                 <a href="tel:+48794483515" class="nav-button">
-                    <img src="phone-icon.png" alt="Phone Icon" loading="lazy">
+                    <img src="https://www.hair-estetic.com/phone-icon.png" alt="Phone icon" loading="lazy">
                     <span class="nav-button-text">Call</span>
                 </a>
                 <div class="nav-button disabled">
-                    <img src="instagram-icon.png" alt="Instagram Icon" loading="lazy">
-                    <span class="nav-button-text">Visit our Instagram</span>
-                    <span class="coming-soon">Coming Soon</span>
+                    <img src="https://www.hair-estetic.com/instagram-icon.png" alt="Instagram icon" loading="lazy">
+                    <span class="nav-button-text">Instagram</span>
                 </div>
             </div>
         </div>
-        <img src="logo-typography.png" alt="Hair Estetic Typography Logo" class="hero-logo reveal" loading="lazy">
-        <p class="reveal">Ready to enhance your beauty with new hair? Contact me to discover your uniqueness.</p>
-        <button class="cta-button about-toggle reveal">About Me</button>
+        <img src="https://www.hair-estetic.com/logo-typography.png" alt="Hair Estetic logo" class="hero-logo reveal" loading="lazy">
+        <p class="reveal" lang="en">Hair is the most exquisite jewelry a woman wears every day.</p>
+        <p class="author reveal" lang="en">Sophia Loren</p>
+        <button class="cta-button about-toggle reveal" title="Click to learn more about Iwona Wach" lang="en">About Me</button>
         <div class="about-content">
-            <img src="about-image.jpg" alt="About Me - Image" class="about-image reveal" loading="lazy">
-            <p class="section-subtitle reveal">My name is Iwona Wach, and I created Hair Estetic – a place where beautiful hair is an art form. I specialize in keratin hair extensions to ensure a natural, healthy look that boosts your confidence daily. I work in a cozy, comfortable atmosphere or visit clients who prefer transformations at home. Soon, Hair Estetic will expand to the Netherlands, because I believe women worldwide deserve luxury at its finest. Perfection in every strand – that’s my promise.</p>
-            <a href="#contact-section" class="cta-button reveal contact-link">Contact</a>
+            <img src="https://www.hair-estetic.com/about-image.jpg" alt="Photo of Iwona Wach" class="about-image reveal" loading="lazy">
+            <p class="section-subtitle reveal" lang="en">My name is Iwona Wach, and I created Hair Estetic—a place where the art of hair extensions meets feminine beauty. I specialize in keratin hair extensions, ensuring a natural, healthy look that boosts your confidence every day. I work in the intimate setting of my home, offering full discretion and comfort, but I also travel to clients to perform procedures in their preferred environment. Soon, Hair Estetic will expand to the Netherlands, as I believe women worldwide deserve the luxury of top-quality hair. Perfection in every strand—that’s my promise.</p>
+            <a href="#contact-section" class="cta-button reveal contact-link" lang="en">Contact</a>
         </div>
     </section>
 
     <main>
         <section class="section style-craft-section">
             <div class="container">
-                <h2 class="section-title reveal">Your Style, Our Craft</h2>
-                <p class="section-subtitle reveal">I created Hair Estetic because I believe hair extensions are an art form of creating beauty in its purest form. My attention to detail and precision at every stage guarantee a result that impresses with naturalness, lightness, and elegance, boosting your confidence and refreshing your look. It’s an experience that makes you feel special every day.</p>
+                <h2 class="section-title reveal" lang="en">Your style, my craft</h2>
+                <p class="section-subtitle reveal" lang="en">I created Hair Estetic because I believe hair extensions are an art form that creates beauty in its purest form. My attention to detail and precision at every stage guarantee a result that impresses with naturalness, lightness, and elegance, boosting your confidence and refreshing your look. It’s an experience that makes you feel extraordinary every day.</p>
             </div>
         </section>
 
         <section class="section services-section">
             <div class="container">
-                <h2 class="section-title reveal">My Services</h2>
+                <h2 class="section-title reveal" lang="en">My Services</h2>
                 <div class="services-list">
                     <div class="service-item reveal">
-                        <img src="icon1.png" alt="Hair Extension Icon" class="service-icon" loading="lazy">
+                        <img src="https://www.hair-estetic.com/icon1.png" alt="Keratin hair extensions icon" class="service-icon" loading="lazy">
                         <div class="service-text">
-                            <h3>Keratin Hair Extensions</h3>
-                            <p>A method of bonding strands with keratin, ensuring safe, durable, and natural extensions that seamlessly blend with your hair while maintaining its healthy appearance.</p>
+                            <h3 lang="en">Keratin Hair Extensions</h3>
+                            <p lang="en">A method of bonding hair strands using keratin, ensuring safe, long-lasting, and natural extensions that seamlessly blend with your hair while maintaining its healthy appearance.</p>
                         </div>
                     </div>
                     <div class="service-item reveal">
-                        <img src="icon2.png" alt="Hair Correction Icon" class="service-icon" loading="lazy">
+                        <img src="https://www.hair-estetic.com/icon2.png" alt="Hair correction icon" class="service-icon" loading="lazy">
                         <div class="service-text">
-                            <h3>Hair Correction and Refilling</h3>
-                            <p>Lifting previously applied extensions and adding new strands to maintain fullness, volume, and a perfect hairstyle.</p>
+                            <h3 lang="en">Hair Correction and Refilling</h3>
+                            <p lang="en">Lifting previously applied extensions and adding new strands to maintain fullness, volume, and a flawless hairstyle.</p>
                         </div>
                     </div>
                     <div class="service-item reveal">
-                        <img src="icon3.png" alt="Extension Removal Icon" class="service-icon" loading="lazy">
+                        <img src="https://www.hair-estetic.com/icon3.png" alt="Extension removal icon" class="service-icon" loading="lazy">
                         <div class="service-text">
-                            <h3>Extension Removal</h3>
-                            <p>Safe removal of extensions using specialized products, protecting natural hair from damage and preparing it for further styling.</p>
+                            <h3 lang="en">Extension Removal</h3>
+                            <p lang="en">Safe removal of extensions using specialized products, protecting natural hair from damage and preparing it for further styling.</p>
                         </div>
                     </div>
                     <div class="service-item reveal">
-                        <img src="icon4.png" alt="Consultation Icon" class="service-icon" loading="lazy">
+                        <img src="https://www.hair-estetic.com/icon4.png" alt="Consultation icon" class="service-icon" loading="lazy">
                         <div class="service-text">
-                            <h3>Consultations and Strand Selection</h3>
-                            <p>Individual analysis of hair structure and preferences, combined with strand selection for color, length, and texture for the perfect result.</p>
+                            <h3 lang="en">Consultations and Hair Selection</h3>
+                            <p lang="en">Personalized analysis of hair structure and preferences, combined with selecting strands based on color, length, and texture for the perfect result.</p>
                         </div>
                     </div>
                 </div>
@@ -1150,14 +1172,14 @@
 
         <section class="section gallery-section">
             <div class="container">
-                <h2 class="section-title reveal">Before and After</h2>
-                <p class="section-subtitle reveal">Slide to immerse yourself in the world of luxurious transformation.</p>
+                <h2 class="section-title reveal" lang="en">Before and After</h2>
+                <p class="section-subtitle reveal" lang="en">Slide to immerse yourself in the world of luxurious transformation.</p>
                 <div class="gallery-container reveal">
                     <div class="slider-container">
-                        <img src="before1.jpg" alt="Before Styling" class="slider-image before-image" loading="lazy">
-                        <img src="after1.jpg" alt="After Styling" class="slider-image after-image" loading="lazy">
+                        <img src="https://www.hair-estetic.com/before1.jpg" alt="Before hair styling photo" class="slider-image before-image" loading="lazy">
+                        <img src="https://www.hair-estetic.com/after1.jpg" alt="After hair styling photo" class="slider-image after-image" loading="lazy">
                         <div class="slider">
-                            <img src="arrows-icon.png" alt="Slider Icon" loading="lazy">
+                            <img src="https://www.hair-estetic.com/arrows-icon.png" alt="Slider icon" loading="lazy">
                         </div>
                         <div class="slider-label">
                             <span class="top-label"></span>
@@ -1165,22 +1187,22 @@
                         </div>
                     </div>
                 </div>
-                <p class="gallery-quote reveal">Book your exclusive transformation today.</p>
+                <p class="gallery-quote reveal" lang="en">Book your unique transformation today.</p>
             </div>
         </section>
 
         <section class="section faq-section">
             <div class="container">
-                <h2 class="section-title reveal">Frequently Asked Questions</h2>
-                <button class="cta-button faq-button reveal">Show FAQ</button>
+                <h2 class="section-title reveal" lang="en">Frequently Asked Questions</h2>
+                <button class="cta-button faq-button reveal" lang="en">Show FAQ</button>
             </div>
         </section>
 
         <section id="contact-section" class="section contact-section">
             <div class="container">
-                <h2 class="section-title reveal">Get in Touch!</h2>
-                <p class="section-subtitle reveal">Indulge in the luxury you deserve. My hair extension method combines aesthetics, precision, and the highest quality strands. I create natural-looking hairstyles that add volume, length, and exceptional shine. It’s not just a change in appearance – it’s an investment in your image and confidence. Book your exclusive transformation today.</p>
-                <button class="cta-button reveal">Choose Contact Method</button>
+                <h2 class="section-title reveal" lang="en">Get in Touch!</h2>
+                <p class="section-subtitle reveal" lang="en">Indulge in the luxury you deserve. My approach to hair extensions combines aesthetics, precision, and the highest quality strands. I create natural-looking hairstyles that add volume, length, and exceptional shine. It’s not just a change in appearance—it’s an investment in your image and confidence. Book your unique transformation today.</p>
+                <button class="cta-button reveal" lang="en">Choose a contact method</button>
             </div>
         </section>
     </main>
@@ -1188,19 +1210,20 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-logo-container">
-                <img src="logo.png" alt="Hair Estetic Logo" class="footer-logo" loading="lazy">
+                <img src="https://www.hair-estetic.com/logo.png" alt="Hair Estetic logo" class="footer-logo" loading="lazy">
             </div>
-            <p class="footer-brand-text"><strong>Hair Estetic</strong><br>
+            <p class="footer-brand-text" lang="en"><strong>Hair Estetic</strong><br>
             "Your dream hair starts with one call."</p>
             <div class="business-info">
-                <h3>Contact and Address</h3>
-                <p>Hair Estetic<br>
+                <h3 lang="en">Contact and Address</h3>
+                <p lang="en">Hair Estetic<br>
                    ul. Insurekcji Kościuszkowskiej, Jaworzno, Poland<br>
                    Phone: <a href="tel:+48794483515">+48 794 483 515</a><br>
                    Email: <a href="mailto:studio.hairestetic@gmail.com">studio.hairestetic@gmail.com</a><br>
-                   Operating in Poland, soon in the Netherlands!</p>
+                   <a href="#services-section">Services</a> | <a href="#contact-section">Contact</a><br>
+                   Operating in Poland, coming soon to the Netherlands!</p>
             </div>
-            <p style="margin-top: 20px;">© 2025 Hair Estetic. All rights reserved.</p>
+            <p style="margin-top: 20px;" lang="en">© 2025 Hair Estetic. All rights reserved.</p>
         </div>
     </footer>
 
@@ -1275,7 +1298,9 @@
                             aboutContent.scrollIntoView({ behavior: 'smooth', block: 'center' });
                         }, 300);
                     } else {
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        setTimeout(() => {
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }, 300);
                     }
                 });
             }
@@ -1302,6 +1327,23 @@
                     document.body.classList.remove('no-scroll');
                 });
             }
+
+            // FAQ accordion functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const isActive = question.classList.contains('active');
+                    faqQuestions.forEach(q => {
+                        q.classList.remove('active');
+                        q.nextElementSibling.classList.remove('active');
+                    });
+                    if (!isActive) {
+                        question.classList.add('active');
+                        answer.classList.add('active');
+                    }
+                });
+            });
 
             // Contact modal
             const contactButtons = document.querySelectorAll('.contact-section .cta-button');
@@ -1357,7 +1399,7 @@
                     const email = 'studio.hairestetic@gmail.com';
                     try {
                         navigator.clipboard.writeText(email).then(() => {
-                            alert(`Email address: ${email} has been copied to clipboard.`);
+                            alert(`Email address: ${email} has been copied to the clipboard.`);
                         }).catch(() => {
                             alert(`Email address: ${email}. Copy manually.`);
                         });
@@ -1400,7 +1442,7 @@
                         } else {
                             scrollPrompt.style.display = 'none';
                             topLabel.style.display = 'block';
-                            topLabel.textContent = percentage < 49 ? 'After Styling' : 'Before Styling';
+                            topLabel.textContent = percentage < 49 ? 'After styling' : 'Before styling';
                         }
                     };
 
@@ -1420,7 +1462,6 @@
 
                     document.addEventListener('mousemove', (e) => {
                         if (isDragging) {
-                            e.preventDefault();
                             updateSlider(e.clientX);
                         }
                     });
@@ -1439,39 +1480,7 @@
                     document.addEventListener('touchend', () => {
                         isDragging = false;
                     });
-
-                    const rect = sliderContainer.getBoundingClientRect();
-                    const initialX = rect.left + (rect.width / 2);
-                    updateSlider(initialX);
                 }
-            });
-
-            // FAQ accordion functionality
-            const faqQuestions = document.querySelectorAll('.faq-question');
-            const faqItems = document.querySelector('.faq-items');
-            faqQuestions.forEach((question, index) => {
-                question.addEventListener('click', () => {
-                    const answer = question.nextElementSibling;
-                    const isActive = question.classList.contains('active');
-
-                    faqQuestions.forEach(q => {
-                        q.classList.remove('active');
-                        q.nextElementSibling.classList.remove('active');
-                    });
-
-                    if (!isActive) {
-                        question.classList.add('active');
-                        answer.classList.add('active');
-                        if (index === faqQuestions.length - 1 && faqItems) {
-                            setTimeout(() => {
-                                faqItems.scrollTo({
-                                    top: faqItems.scrollHeight,
-                                    behavior: 'smooth'
-                                });
-                            }, 200);
-                        }
-                    }
-                });
             });
         });
     </script>
