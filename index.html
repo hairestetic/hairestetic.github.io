@@ -4,32 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hair Estetic</title>
-    <meta name="description" content="Usługi przedłużania włosów dostosowane do Twojego stylu. Działam w Polsce, wkrótce w Holandii. Skontaktuj się, aby umówić wizytę.">
-    <meta name="keywords" content="przedłużanie włosów, salon fryzjerski, stylizacja włosów, Hair Estetic, Jaworzno, kontakt, umów wizytę">
+    <meta name="description" content="Profesjonalne przedłużanie włosów metodą keratynową w Jaworznie. Hair Estetic oferuje naturalne, trwałe fryzury, które podkreślą Twoje piękno. Umów się już dziś!">
+    <meta name="keywords" content="przedłużanie włosów keratynowe, Hair Estetic Jaworzno, stylizacja włosów, fryzury naturalne, Iwona Wach, salon fryzjerski Jaworzno, przedłużanie włosów Holandia">
     <meta name="title" content="Hair Estetic">
     <meta property="og:title" content="Hair Estetic">
-    <meta property="og:description" content="Usługi przedłużania włosów dostosowane do Twojego stylu. Działam w Polsce, wkrótce w Holandii. Skontaktuj się, aby umówić wizytę.">
+    <meta property="og:description" content="Profesjonalne przedłużanie włosów metodą keratynową w Jaworznie. Hair Estetic oferuje naturalne, trwałe fryzury, które podkreślą Twoje piękno. Umów się już dziś!">
     <meta property="og:image" content="https://www.hair-estetic.com/logo.png">
     <meta property="og:url" content="https://www.hair-estetic.com/">
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#0a0a0a">
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/png" href="https://www.hair-estetic.com/favicon-96x96.png" sizes="96x96" crossorigin="anonymous" />
+    <link rel="icon" type="image/png" href="https://www.hair-estetic.com/favicon-16x16.png" sizes="16x16" crossorigin="anonymous" />
+    <link rel="icon" type="image/svg+xml" href="https://www.hair-estetic.com/favicon.svg" crossorigin="anonymous" />
+    <link rel="shortcut icon" href="https://www.hair-estetic.com/favicon.ico" crossorigin="anonymous" />
+    <link rel="apple-touch-icon" href="https://www.hair-estetic.com/apple-touch-icon.png" crossorigin="anonymous" />
+    <link rel="manifest" href="https://www.hair-estetic.com/site.webmanifest" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="alternate" hreflang="pl" href="https://www.hair-estetic.com/">
     <link rel="alternate" hreflang="en" href="https://www.hair-estetic.com/en.html">
+    <link rel="sitemap" href="https://www.hair-estetic.com/sitemap.xml" />
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Hair Estetic",
-        "description": "Usługi przedłużania włosów dostosowane do Twojego stylu. Działam w Polsce, wkrótce w Holandii. Skontaktuj się, aby umówić wizytę.",
+        "description": "Profesjonalne przedłużanie włosów metodą keratynową w Jaworznie. Hair Estetic oferuje naturalne, trwałe fryzury, które podkreślą Twoje piękno. Umów się już dziś!",
         "url": "https://www.hair-estetic.com/",
         "inLanguage": "pl"
     }
@@ -49,6 +50,17 @@
             "addressCountry": "PL"
         },
         "url": "https://www.hair-estetic.com/"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Quotation",
+        "text": "Włosy to najbardziej wyjątkowa biżuteria, jaką kobieta nosi każdego dnia.",
+        "author": {
+            "@type": "Person",
+            "name": "Sophia Loren"
+        }
     }
     </script>
     <!-- Google tag (gtag.js) -->
@@ -150,6 +162,16 @@
             font-style: italic;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
+        .hero .author {
+            font-size: 0.8rem;
+            color: var(--light-gray);
+            font-style: italic;
+            margin: 0 auto 30px;
+            max-width: 650px;
+            position: relative;
+            z-index: 9;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
         .cta-button {
             padding: 18px 35px;
             font-size: 1.3rem;
@@ -177,6 +199,14 @@
             transform: scale(1.05);
             box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
             color: var(--bg-color);
+        }
+        .cta-button.about-toggle {
+            animation: pulse 2s infinite ease-in-out;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
         }
         .cta-button.about-toggle::after {
             content: '\2B9F';
@@ -818,7 +848,6 @@
                 overflow: hidden;
             }
             .nav-button img { width: 16px; height: 16px; }
-            .nav-button.disabled img { margin-right: -2px; }
             .nav-button-text { display: none; }
             .nav-button.disabled::after { content: '🔜'; font-size: 0.8rem; margin-left: 5px; }
             .coming-soon { display: none; }
@@ -851,7 +880,8 @@
                 aspect-ratio: 1/1; 
                 margin: 5px auto; 
             }
-            .hero p { font-size: 1rem; margin-bottom: 5px; }
+            .hero p { font-size: 1rem; margin-bottom: 15px; }
+            .hero .author { font-size: 0.7rem; margin-bottom: 15px; }
             .cta-button { 
                 padding: 12px 25px; 
                 font-size: 1rem; 
@@ -959,25 +989,25 @@
             <div class="header-left">
                 <div class="language-dropdown">
                     <button class="language-dropdown-button" aria-label="Zmień język">
-                        <img src="globe.png" width="20" height="20" alt="Przełącznik języka" loading="lazy">
+                        <img src="https://www.hair-estetic.com/globe.png" width="20" height="20" alt="Przełącznik języka" loading="lazy">
                         PL
                     </button>
                     <div class="language-dropdown-content">
-                        <a href="index.html" class="active">PL</a>
-                        <a href="en.html">EN</a>
+                        <a href="https://www.hair-estetic.com/index.html" class="active">PL</a>
+                        <a href="https://www.hair-estetic.com/en.html">EN</a>
                     </div>
                 </div>
             </div>
             <div class="header-center">
                 <a href="#" class="logo-container">
-                    <img src="logo.png" alt="Logo Hair Estetic" class="logo-img" loading="lazy">
+                    <img src="https://www.hair-estetic.com/logo.png" alt="Logo Hair Estetic" class="logo-img" loading="lazy">
                     <span class="logo-text">Hair Estetic</span>
                 </a>
             </div>
             <div class="header-right">
                 <div class="nav-button disabled">
-                    <img src="instagram-icon.png" alt="Ikona Instagrama" loading="lazy">
-                    <span class="nav-button-text">Odwiedź mój Instagram</span>
+                    <img src="https://www.hair-estetic.com/instagram-icon.png" alt="Ikona Instagrama" loading="lazy">
+                    <span class="nav-button-text">Instagram</span>
                     <span class="coming-soon">Wkrótce</span>
                 </div>
             </div>
@@ -990,19 +1020,19 @@
         <h2>Wybierz metodę kontaktu</h2>
         <div class="contact-icons">
             <a href="tel:+48794483515" class="contact-icon">
-                <img src="phone-icon.png" alt="Ikona telefonu" loading="lazy">
+                <img src="https://www.hair-estetic.com/phone-icon.png" alt="Ikona telefonu" loading="lazy">
                 <span>Zadzwoń</span>
             </a>
             <a href="mailto:studio.hairestetic@gmail.com?subject=Zapytanie od Hair Estetic" class="contact-icon email-link">
-                <img src="email-icon.png" alt="Ikona e-mail" loading="lazy">
+                <img src="https://www.hair-estetic.com/email-icon.png" alt="Ikona e-mail" loading="lazy">
                 <span>E-mail</span>
             </a>
             <a href="https://wa.me/48794483515" class="contact-icon whatsapp">
-                <img src="whatsapp-icon.png" alt="Ikona WhatsApp" loading="lazy">
+                <img src="https://www.hair-estetic.com/whatsapp-icon.png" alt="Ikona WhatsApp" loading="lazy">
                 <span>WhatsApp</span>
             </a>
             <div class="contact-icon disabled messenger">
-                <img src="messenger-icon.png" alt="Ikona Messengera" loading="lazy">
+                <img src="https://www.hair-estetic.com/messenger-icon.png" alt="Ikona Messengera" loading="lazy">
                 <span>Messenger</span>
                 <span class="coming-soon">Wkrótce</span>
             </div>
@@ -1030,7 +1060,7 @@
             </div>
             <div class="faq-item">
                 <button class="faq-question">Jakie techniki przedłużania włosów oferujesz?</button>
-                <div class="faq-answer">Oferuję różne techniki, takie jak łączenie keratynowe, taśmowe i mikroringi, dopasowane do Twoich potrzeb.</div>
+                <div class="faq-answer">Specjalizuję się w przedłużaniu włosów metodą keratynową.</div>
             </div>
             <div class="faq-item">
                 <button class="faq-question">Jak długo utrzymują się przedłużane włosy?</button>
@@ -1042,7 +1072,7 @@
             </div>
             <div class="faq-item">
                 <button class="faq-question">Jak dbać o przedłużane włosy?</button>
-                <div class="faq-answer">Zalecam stosowanie delikatnych szamponów, unikanie gorących narzędzi bez ochrony i regularne czesanie specjalną szczotką.</div>
+                <div class="faq-answer">Zalecam regularne rozczesywanie, stosowanie delikatnych szamponów bez SLS/SLES, unikanie wysokiej temperatury podczas stylizacji włosów jak również odradzam używanie tłustych kosmetyków przy łączeniach keratynowych.</div>
             </div>
             <div class="faq-item">
                 <button class="faq-question">Czy oferujesz konsultacje przed zabiegiem?</button>
@@ -1053,16 +1083,8 @@
                 <div class="faq-answer">Koszty zależą od techniki i długości włosów. Skontaktuj się ze mną, aby uzyskać szczegółową wycenę.</div>
             </div>
             <div class="faq-item">
-                <button class="faq-question">Czy zabieg przedłużania włosów boli?</button>
-                <div class="faq-answer">Nie, zabieg jest bezbolesny, choć może być odczuwany lekki dyskomfort podczas aplikacji.</div>
-            </div>
-            <div class="faq-item">
                 <button class="faq-question">Czy muszę kupić włosy przed zabiegiem, czy to Ty wybierasz włosy?</button>
                 <div class="faq-answer">Mogę dostarczyć włosy dopasowane do Twoich potrzeb, ale możesz też przynieść własne po konsultacji.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">Czy mogę przynieść własne włosy, czy muszę używać tych wybranych przez stylistkę?</button>
-                <div class="faq-answer">Możesz przynieść własne włosy, pod warunkiem że spełniają moje standardy jakości. Skonsultuj to ze mną wcześniej.</div>
             </div>
             <div class="faq-spacer"></div>
         </div>
@@ -1073,75 +1095,75 @@
             <div class="mobile-nav-left">
                 <div class="language-dropdown">
                     <button class="language-dropdown-button" aria-label="Zmień język">
-                        <img src="globe.png" width="16" height="16" alt="Przełącznik języka" loading="lazy">
+                        <img src="https://www.hair-estetic.com/globe.png" width="16" height="16" alt="Przełącznik języka" loading="lazy">
                         PL
                     </button>
                     <div class="language-dropdown-content">
-                        <a href="index.html" class="active">PL</a>
-                        <a href="en.html">EN</a>
+                        <a href="https://www.hair-estetic.com/index.html" class="active">PL</a>
+                        <a href="https://www.hair-estetic.com/en.html">EN</a>
                     </div>
                 </div>
             </div>
             <div class="mobile-nav-right">
                 <a href="tel:+48794483515" class="nav-button">
-                    <img src="phone-icon.png" alt="Ikona telefonu" loading="lazy">
+                    <img src="https://www.hair-estetic.com/phone-icon.png" alt="Ikona telefonu" loading="lazy">
                     <span class="nav-button-text">Zadzwoń</span>
                 </a>
                 <div class="nav-button disabled">
-                    <img src="instagram-icon.png" alt="Ikona Instagrama" loading="lazy">
-                    <span class="nav-button-text">Odwiedź mój Instagram</span>
-                    <span class="coming-soon">Wkrótce</span>
+                    <img src="https://www.hair-estetic.com/instagram-icon.png" alt="Ikona Instagrama" loading="lazy">
+                    <span class="nav-button-text">Instagram</span>
                 </div>
             </div>
         </div>
-        <img src="logo-typography.png" alt="Logo Hair Estetic" class="hero-logo reveal" loading="lazy">
-        <p class="reveal">Gotowa podkreślić swoje piękno nową fryzurą? Skontaktuj się ze mną, aby odkryć swoją wyjątkowość.</p>
-        <button class="cta-button about-toggle reveal">O mnie</button>
+        <img src="https://www.hair-estetic.com/logo-typography.png" alt="Logo Hair Estetic" class="hero-logo reveal" loading="lazy">
+        <p class="reveal" lang="pl">Włosy to najbardziej wyjątkowa biżuteria, jaką kobieta nosi każdego dnia.</p>
+        <p class="author reveal" lang="pl">Sophia Loren</p>
+        <button class="cta-button about-toggle reveal" lang="pl">Poznaj mnie</button>
         <div class="about-content">
-            <img src="about-image.jpg" alt="O mnie - Zdjęcie" class="about-image reveal" loading="lazy">
-            <p class="section-subtitle reveal">Mam na imię Iwona Wach i stworzyłam Hair Estetic – miejsce, gdzie piękne włosy to sztuka. Specjalizuję się w przedłużaniu włosów metodą keratynową, zapewniając naturalny, zdrowy wygląd, który wzmacnia Twoją pewność siebie na co dzień. Pracuję w przytulnej, komfortowej atmosferze lub dojeżdżam do klientek, które wolą metamorfozy w domu. Wkrótce Hair Estetic pojawi się w Holandii, bo wierzę, że kobiety na całym świecie zasługują na luksus najwyższej jakości. Perfekcja w każdym paśmie – to moja obietnica.</p>
-            <a href="#contact-section" class="cta-button reveal contact-link">Kontakt</a>
+            <img src="https://www.hair-estetic.com/about-image.jpg" alt="Zdjęcie Iwony Wach" class="about-image reveal" loading="lazy">
+            <p class="section-subtitle reveal" lang="pl">Nazywam się Iwona Wach i stworzyłam Hair Estetic - miejsce w którym sztuka przedłużania włosów spotyka się z kobiecym pięknem. Specjalizuję się w przedłużaniu włosów metodą keratynową, zapewniając naturalny, zdrowy wygląd, który wzmacnia Twoją pewność siebie na co dzień. Pracuję w kameralnych warunkach mojego domu, zapewniając przy tym pełną dyskrecję i komfort jednak na życzenie dojeżdżam również do klientek, aby wykonać zabieg w ich ulubionym otoczeniu. Wkrótce Hair Estetic pojawi się w Holandii, bo wierzę, że kobiety na całym świecie zasługują na luksus najwyższej jakości. Perfekcja w każdym paśmie – to moja obietnica.</p>
+            <a href="#contact-section" class="cta-button reveal contact-link" lang="pl">Kontakt</a>
         </div>
     </section>
 
     <main>
         <section class="section style-craft-section">
             <div class="container">
-                <h2 class="section-title reveal">Twój styl, moje rzemiosło</h2>
-                <p class="section-subtitle reveal">Stworzyłam Hair Estetic, ponieważ wierzę, że przedłużanie włosów to sztuka tworzenia piękna w najczystszej formie. Moja dbałość o szczegóły i precyzja na każdym etapie gwarantują rezultat, który zachwyca naturalnością, lekkością i elegancją, dodając Ci pewności siebie i odświeżając Twój wygląd. To doświadczenie, które sprawia, że czujesz się wyjątkowo każdego dnia.</p>
+                <h2 class="section-title reveal" lang="pl">Twój styl, moje rzemiosło</h2>
+                <p class="section-subtitle reveal" lang="pl">Stworzyłam Hair Estetic, ponieważ wierzę, że przedłużanie włosów to sztuka tworzenia piękna w najczystszej formie. Moja dbałość o szczegóły i precyzja na każdym etapie gwarantują rezultat, który zachwyca naturalnością, lekkością i elegancją, dodając Ci pewności siebie i odświeżając Twój wygląd. To doświadczenie, które sprawia, że czujesz się wyjątkowo każdego dnia.</p>
             </div>
         </section>
 
         <section class="section services-section">
             <div class="container">
-                <h2 class="section-title reveal">Moje usługi</h2>
+                <h2 class="section-title reveal" lang="pl">Moje usługi</h2>
                 <div class="services-list">
                     <div class="service-item reveal">
-                        <img src="icon1.png" alt="Ikona przedłużania włosów" class="service-icon" loading="lazy">
+                        <img src="https://www.hair-estetic.com/icon1.png" alt="Ikona przedłużania włosów keratynowych" class="service-icon" loading="lazy">
                         <div class="service-text">
-                            <h3>Przedłużanie włosów keratynowe</h3>
-                            <p>Metoda łączenia pasm za pomocą keratyny, zapewniająca bezpieczne, trwałe i naturalne przedłużenia, które idealnie komponują się z Twoimi włosami, zachowując ich zdrowy wygląd.</p>
+                            <h3 lang="pl">Przedłużanie włosów keratynowe</h3>
+                            <p lang="pl">Metoda łączenia pasm za pomocą keratyny, zapewniająca bezpieczne, trwałe i naturalne przedłużenia, które idealnie komponują się z Twoimi włosami, zachowując ich zdrowy wygląd.</p>
                         </div>
                     </div>
                     <div class="service-item reveal">
-                        <img src="icon2.png" alt="Ikona korekty włosów" class="service-icon" loading="lazy">
+                        <img src="https://www.hair-estetic.com/icon2.png" alt="Ikona korekty włosów" class="service-icon" loading="lazy">
                         <div class="service-text">
-                            <h3>Korekta i uzupełnianie włosów</h3>
-                            <p>Podnoszenie wcześniej założonych przedłużeń i dodawanie nowych pasm, aby zachować pełnię, objętość i idealną fryzurę.</p>
+                            <h3 lang="pl">Korekta i uzupełnianie włosów</h3>
+                            <p lang="pl">Podnoszenie wcześniej założonych przedłużeń i dodawanie nowych pasm, aby zachować pełnię, objętość i idealną fryzurę.</p>
                         </div>
                     </div>
                     <div class="service-item reveal">
-                        <img src="icon3.png" alt="Ikona usuwania przedłużeń" class="service-icon" loading="lazy">
+                        <img src="https://www.hair-estetic.com/icon3.png" alt="Ikona usuwania przedłużeń" class="service-icon" loading="lazy">
                         <div class="service-text">
-                            <h3>Usuwanie przedłużeń</h3>
-                            <p>Bezpieczne usuwanie przedłużeń za pomocą specjalistycznych produktów, chroniąc naturalne włosy przed uszkodzeniem i przygotowując je do dalszej stylizacji.</p>
+                            <h3 lang="pl">Usuwanie przedłużeń</h3>
+                            <p lang="pl">Bezpieczne usuwanie przedłużeń za pomocą specjalistycznych produktów, chroniąc naturalne włosy przed uszkodzeniem i przygotowując je do dalszej stylizacji.</p>
                         </div>
                     </div>
                     <div class="service-item reveal">
-                        <img src="icon4.png" alt="Ikona konsultacji" class="service-icon" loading="lazy">
+                        <img src="https://www.hair-estetic.com/icon4.png" alt="Ikona konsultacji" class="service-icon" loading="lazy">
                         <div class="service-text">
-                            <h3>Konsultacje i dobór pasm</h3>
-                            <p>Indywidualna analiza struktury włosów i preferencji, połączona z doborem pasm pod kątem koloru, długości i tekstury dla idealnego efektu.</p>
+                            <h3 lang="pl">Konsultacje i dobór pasm</h3>
+                            <p lang="pl">Indywidualna analiza struktury włosów i preferencji, połączona z doborem pasm pod kątem koloru, długości i tekstury dla idealnego efektu.</p>
                         </div>
                     </div>
                 </div>
@@ -1150,14 +1172,14 @@
 
         <section class="section gallery-section">
             <div class="container">
-                <h2 class="section-title reveal">Przed i po</h2>
-                <p class="section-subtitle reveal">Przesuń, aby zanurzyć się w świecie luksusowej metamorfozy.</p>
+                <h2 class="section-title reveal" lang="pl">Przed i po</h2>
+                <p class="section-subtitle reveal" lang="pl">Przesuń, aby zanurzyć się w świecie luksusowej metamorfozy.</p>
                 <div class="gallery-container reveal">
                     <div class="slider-container">
-                        <img src="before1.jpg" alt="Przed stylizacją" class="slider-image before-image" loading="lazy">
-                        <img src="after1.jpg" alt="Po stylizacji" class="slider-image after-image" loading="lazy">
+                        <img src="https://www.hair-estetic.com/before1.jpg" alt="Zdjęcie przed stylizacją włosów" class="slider-image before-image" loading="lazy">
+                        <img src="https://www.hair-estetic.com/after1.jpg" alt="Zdjęcie po stylizacji włosów" class="slider-image after-image" loading="lazy">
                         <div class="slider">
-                            <img src="arrows-icon.png" alt="Ikona suwaka" loading="lazy">
+                            <img src="https://www.hair-estetic.com/arrows-icon.png" alt="Ikona suwaka" loading="lazy">
                         </div>
                         <div class="slider-label">
                             <span class="top-label"></span>
@@ -1165,22 +1187,22 @@
                         </div>
                     </div>
                 </div>
-                <p class="gallery-quote reveal">Umów się na swoją wyjątkową metamorfozę już dziś.</p>
+                <p class="gallery-quote reveal" lang="pl">Umów się na swoją wyjątkową metamorfozę już dziś.</p>
             </div>
         </section>
 
         <section class="section faq-section">
             <div class="container">
-                <h2 class="section-title reveal">Najczęściej zadawane pytania</h2>
-                <button class="cta-button faq-button reveal">Pokaż FAQ</button>
+                <h2 class="section-title reveal" lang="pl">Najczęściej zadawane pytania</h2>
+                <button class="cta-button faq-button reveal" lang="pl">Pokaż FAQ</button>
             </div>
         </section>
 
         <section id="contact-section" class="section contact-section">
             <div class="container">
-                <h2 class="section-title reveal">Skontaktuj się!</h2>
-                <p class="section-subtitle reveal">Pozwól sobie na luksus, na który zasługujesz. Moja metoda przedłużania włosów łączy estetykę, precyzję i najwyższej jakości pasma. Tworzę naturalnie wyglądające fryzury, które dodają objętości, długości i wyjątkowego blasku. To nie tylko zmiana wyglądu – to inwestycja w Twój wizerunek i pewność siebie. Umów się na swoją wyjątkową metamorfozę już dziś.</p>
-                <button class="cta-button reveal">Wybierz metodę kontaktu</button>
+                <h2 class="section-title reveal" lang="pl">Skontaktuj się!</h2>
+                <p class="section-subtitle reveal" lang="pl">Podaruj sobie luksus, na który zasługujesz. Sposób w jaki przedłużam włosy to połączenie estetyki, precyzji i najwyższej jakości pasm. Tworzę naturalnie wyglądające fryzury, które dodają objętości, długości i wyjątkowego blasku. To nie tylko zmiana wyglądu – to inwestycja w Twój wizerunek i pewność siebie. Umów się na swoją wyjątkową metamorfozę już dziś.</p>
+                <button class="cta-button reveal" lang="pl">Wybierz metodę kontaktu</button>
             </div>
         </section>
     </main>
@@ -1188,19 +1210,20 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-logo-container">
-                <img src="logo.png" alt="Logo Hair Estetic" class="footer-logo" loading="lazy">
+                <img src="https://www.hair-estetic.com/logo.png" alt="Logo Hair Estetic" class="footer-logo" loading="lazy">
             </div>
-            <p class="footer-brand-text"><strong>Hair Estetic</strong><br>
+            <p class="footer-brand-text" lang="pl"><strong>Hair Estetic</strong><br>
             "Twoje wymarzone włosy zaczynają się od jednego telefonu."</p>
             <div class="business-info">
-                <h3>Kontakt i adres</h3>
-                <p>Hair Estetic<br>
+                <h3 lang="pl">Kontakt i adres</h3>
+                <p lang="pl">Hair Estetic<br>
                    ul. Insurekcji Kościuszkowskiej, Jaworzno, Polska<br>
                    Telefon: <a href="tel:+48794483515">+48 794 483 515</a><br>
                    E-mail: <a href="mailto:studio.hairestetic@gmail.com">studio.hairestetic@gmail.com</a><br>
+                   <a href="#services-section">Usługi</a> | <a href="#contact-section">Kontakt</a><br>
                    Działam w Polsce, wkrótce w Holandii!</p>
             </div>
-            <p style="margin-top: 20px;">© 2025 Hair Estetic. Wszystkie prawa zastrzeżone.</p>
+            <p style="margin-top: 20px;" lang="pl">© 2025 Hair Estetic. Wszystkie prawa zastrzeżone.</p>
         </div>
     </footer>
 
@@ -1275,7 +1298,9 @@
                             aboutContent.scrollIntoView({ behavior: 'smooth', block: 'center' });
                         }, 300);
                     } else {
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        setTimeout(() => {
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }, 300);
                     }
                 });
             }
@@ -1302,6 +1327,23 @@
                     document.body.classList.remove('no-scroll');
                 });
             }
+
+            // FAQ accordion functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const isActive = question.classList.contains('active');
+                    faqQuestions.forEach(q => {
+                        q.classList.remove('active');
+                        q.nextElementSibling.classList.remove('active');
+                    });
+                    if (!isActive) {
+                        question.classList.add('active');
+                        answer.classList.add('active');
+                    }
+                });
+            });
 
             // Contact modal
             const contactButtons = document.querySelectorAll('.contact-section .cta-button');
@@ -1420,7 +1462,6 @@
 
                     document.addEventListener('mousemove', (e) => {
                         if (isDragging) {
-                            e.preventDefault();
                             updateSlider(e.clientX);
                         }
                     });
@@ -1439,39 +1480,7 @@
                     document.addEventListener('touchend', () => {
                         isDragging = false;
                     });
-
-                    const rect = sliderContainer.getBoundingClientRect();
-                    const initialX = rect.left + (rect.width / 2);
-                    updateSlider(initialX);
                 }
-            });
-
-            // FAQ accordion functionality
-            const faqQuestions = document.querySelectorAll('.faq-question');
-            const faqItems = document.querySelector('.faq-items');
-            faqQuestions.forEach((question, index) => {
-                question.addEventListener('click', () => {
-                    const answer = question.nextElementSibling;
-                    const isActive = question.classList.contains('active');
-
-                    faqQuestions.forEach(q => {
-                        q.classList.remove('active');
-                        q.nextElementSibling.classList.remove('active');
-                    });
-
-                    if (!isActive) {
-                        question.classList.add('active');
-                        answer.classList.add('active');
-                        if (index === faqQuestions.length - 1 && faqItems) {
-                            setTimeout(() => {
-                                faqItems.scrollTo({
-                                    top: faqItems.scrollHeight,
-                                    behavior: 'smooth'
-                                });
-                            }, 200);
-                        }
-                    }
-                });
             });
         });
     </script>
