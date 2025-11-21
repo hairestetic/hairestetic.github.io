@@ -19,6 +19,8 @@
     <link rel="shortcut icon" href="https://www.hair-estetic.com/favicon.ico" crossorigin="anonymous" />
     <link rel="apple-touch-icon" href="https://www.hair-estetic.com/apple-touch-icon.png" crossorigin="anonymous" />
     <link rel="manifest" href="https://www.hair-estetic.com/site.webmanifest" crossorigin="anonymous" />
+    <link rel="preload" as="image" href="https://www.hair-estetic.com/before1.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="https://www.hair-estetic.com/after1.jpg" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
@@ -100,6 +102,8 @@
         .nav-button.disabled { pointer-events: none; opacity: 0.6; cursor: default; }
         .nav-button.disabled:hover { background-color: rgba(10, 10, 10, 0.8); color: var(--accent-color); transform: none; box-shadow: none; }
         .nav-button img { width: 20px; height: 20px; }
+        .nav-button img[src$=".svg"] { filter: brightness(0) saturate(100%) invert(74%) sepia(68%) saturate(434%) hue-rotate(6deg) brightness(93%) contrast(87%); }
+        .nav-button:hover img[src$=".svg"] { filter: brightness(0) saturate(100%) invert(10%) sepia(10%) saturate(0%) hue-rotate(180deg) brightness(95%) contrast(92%); }
         .nav-button-text { display: inline; }
         
         .hero {
@@ -847,7 +851,7 @@
                 justify-content: center;
                 overflow: hidden;
             }
-            .nav-button img { width: 16px; height: 16px; }
+            .nav-button img { width: 16px; height: 16px; display: block; }
             .nav-button-text { display: none; }
             .nav-button.disabled::after { content: '🔜'; font-size: 0.8rem; margin-left: 5px; }
             .coming-soon { display: none; }
@@ -1005,11 +1009,13 @@
                 </a>
             </div>
             <div class="header-right">
-                <div class="nav-button disabled">
-                    <img src="https://www.hair-estetic.com/instagram-icon.png" alt="Instagram icon" loading="lazy">
+                <a href="https://www.instagram.com/hair_estetic.by.iwona?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="nav-button">
+                    <img src="https://www.hair-estetic.com/instagram-icon.png" alt="Ikona Instagrama" loading="lazy">
                     <span class="nav-button-text">Instagram</span>
-                    <span class="coming-soon">Coming soon</span>
-                </div>
+                </a>
+                <a href="#gallery-section" class="nav-button">
+                    <span class="nav-button-text">Gallery</span>
+                </a>
             </div>
         </div>
     </header>
@@ -1109,10 +1115,14 @@
                     <img src="https://www.hair-estetic.com/phone-icon.png" alt="Phone icon" loading="lazy">
                     <span class="nav-button-text">Call</span>
                 </a>
-                <div class="nav-button disabled">
-                    <img src="https://www.hair-estetic.com/instagram-icon.png" alt="Instagram icon" loading="lazy">
+                <a href="https://www.instagram.com/hair_estetic.by.iwona?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="nav-button">
+                    <img src="https://www.hair-estetic.com/instagram-icon.png" alt="Ikona Instagrama" loading="lazy">
                     <span class="nav-button-text">Instagram</span>
-                </div>
+                </a>
+                <a href="#gallery-section" class="nav-button">
+                    <img src="https://www.hair-estetic.com/gallery-icon.svg" alt="Gallery icon" loading="lazy">
+                    <span class="nav-button-text">Gallery</span>
+                </a>
             </div>
         </div>
         <img src="https://www.hair-estetic.com/logo-typography.png" alt="Hair Estetic logo" class="hero-logo reveal" loading="lazy">
@@ -1170,14 +1180,14 @@
             </div>
         </section>
 
-        <section class="section gallery-section">
+        <section id="gallery-section" class="section gallery-section">
             <div class="container">
                 <h2 class="section-title reveal" lang="en">Before and After</h2>
                 <p class="section-subtitle reveal" lang="en">Slide to immerse yourself in the world of luxurious transformation.</p>
                 <div class="gallery-container reveal">
                     <div class="slider-container">
-                        <img src="https://www.hair-estetic.com/before1.jpg" alt="Before hair styling photo" class="slider-image before-image" loading="lazy">
-                        <img src="https://www.hair-estetic.com/after1.jpg" alt="After hair styling photo" class="slider-image after-image" loading="lazy">
+                        <img src="https://www.hair-estetic.com/before1.jpg" alt="Before hair styling photo" class="slider-image before-image" loading="eager" fetchpriority="high">
+                        <img src="https://www.hair-estetic.com/after1.jpg" alt="After hair styling photo" class="slider-image after-image" loading="eager" fetchpriority="high">
                         <div class="slider">
                             <img src="https://www.hair-estetic.com/arrows-icon.png" alt="Slider icon" loading="lazy">
                         </div>
@@ -1187,7 +1197,8 @@
                         </div>
                     </div>
                 </div>
-                <p class="gallery-quote reveal" lang="en">Book your unique transformation today.</p>
+                <a href="#gallery-section" class="cta-button reveal" style="margin-top: 20px;" lang="en">Gallery</a>
+<p class="gallery-quote reveal" lang="en">Book your unique transformation today.</p>
             </div>
         </section>
 
