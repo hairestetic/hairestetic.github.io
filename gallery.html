@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria - Hair Estetic</title>
+    <meta name="description" content="Galeria transformacji Hair Estetic - zobacz efekty przedłużania włosów metodą keratynową przed i po zabiegu.">
+    <meta property="og:title" content="Galeria - Hair Estetic">
+    <meta property="og:description" content="Galeria transformacji Hair Estetic - zobacz efekty przedłużania włosów metodą keratynową przed i po zabiegu.">
+    <meta property="og:image" content="https://www.hair-estetic.com/logo.png">
+    <meta name="theme-color" content="#0a0a0a">
+    <link rel="icon" type="image/png" href="https://www.hair-estetic.com/favicon-96x96.png" sizes="96x96" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <!-- Preload pierwszych zdjęć dla szybszego ładowania -->
+    <link rel="preload" href="images/before-1.jpg" as="image">
+    <link rel="preload" href="images/after-1.jpg" as="image">
+    <link rel="preload" href="images/before-2.jpg" as="image">
+    <link rel="preload" href="images/after-2.jpg" as="image">
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --text-color: #e0e0e0;
+            --accent-color: #D4AF37;
+            --secondary-accent: #4B1C1C;
+            --dark-gray: #111111;
+            --light-gray: #a0a0a0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            background: linear-gradient(135deg, var(--bg-color), var(--dark-gray));
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        body.modal-open {
+            overflow: hidden;
+        }
+        
+        /* Header */
+        .sticky-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 20px 0;
+            border-bottom: 1px solid #222;
+            height: 70px;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .header-left, .header-right {
+            flex: 1;
+            display: flex;
+        }
+        
+        .header-left {
+            justify-content: flex-start;
+        }
+        
+        .header-right {
+            justify-content: flex-end;
+        }
+        
+        .header-center {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-img {
+            height: 45px;
+        }
+        
+        .header-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.2rem;
+            color: var(--accent-color);
+            white-space: nowrap;
+        }
+        
+        .language-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .language-dropdown-button {
+            background: none;
+            border: none;
+            color: var(--accent-color);
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 8px 15px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s ease;
+            font-family: 'Playfair Display', serif;
+            min-width: 100px;
+        }
+        
+        .language-dropdown-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+        
+        .language-dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #1a1a1a;
+            border: 1px solid var(--accent-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            z-index: 1001;
+            min-width: 100px;
+            overflow: hidden;
+        }
+        
+        .language-dropdown-content a {
+            display: block;
+            padding: 8px 10px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+            box-sizing: border-box;
+            width: 100%;
+        }
+        
+        .language-dropdown-content a:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+        }
+        
+        .language-dropdown-content a.active {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            font-weight: 700;
+        }
+        
+        .language-dropdown.open .language-dropdown-content {
+            display: block;
+        }
+        
+        .nav-button {
+            padding: 8px 15px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border: 1px solid var(--accent-color);
+            border-radius: 5px;
+            background-color: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            color: var(--accent-color);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+        
+        .nav-button:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+        }
+        
+        .main-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 120px 20px 40px;
+        }
+        
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: white;
+            text-align: center;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(75, 28, 28, 0.3);
+        }
+        
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--light-gray);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+            grid-auto-flow: dense;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(75, 28, 28, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        /* Różne aspect ratio dla różnych formatów */
+        .gallery-item.landscape {
+            aspect-ratio: 16 / 9;
+            grid-column: span 2;
+        }
+        
+        .gallery-item.square {
+            aspect-ratio: 1 / 1;
+        }
+        
+        .gallery-item.portrait {
+            aspect-ratio: 4 / 5;
+        }
+        
+        @media (max-width: 1024px) {
+            .gallery-item.landscape {
+                grid-column: span 1;
+            }
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+        
+        .gallery-item-images {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .gallery-item-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Optymalizacje ładowania */
+            image-rendering: auto;
+            image-rendering: crisp-edges;
+            image-rendering: -webkit-optimize-contrast;
+            /* Transition dla smooth loading */
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item-image:not(.loaded) {
+            opacity: 0.7;
+        }
+        
+        .gallery-item-image.loaded {
+            opacity: 1;
+        }
+        
+        /* Loading spinner dla obrazów */
+        .gallery-item-images::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            border: 3px solid var(--dark-gray);
+            border-top: 3px solid var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            z-index: 5;
+            opacity: 0.8;
+        }
+        
+        .gallery-item-images.loaded::before {
+            display: none;
+        }
+        
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        .gallery-item-image.before {
+            z-index: 1;
+        }
+        
+        .gallery-item-image.after {
+            z-index: 2;
+            clip-path: inset(0 100% 0 0);
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item-divider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background-color: var(--accent-color);
+            z-index: 10;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item-label {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: var(--accent-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--accent-color);
+            z-index: 11;
+            pointer-events: none;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            transition: opacity 0.3s ease;
+        }
+        
+        /* Ukryj wszystkie elementy animacji dopóki nie animuje */
+        .gallery-item:not(.animating) .gallery-item-divider,
+        .gallery-item:not(.animating) .gallery-item-label {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .gallery-item:not(.animating) .gallery-item-image.after {
+            opacity: 0;
+        }
+        
+        /* Pokaż elementy gdy animuje */
+        .gallery-item.animating .gallery-item-divider,
+        .gallery-item.animating .gallery-item-label,
+        .gallery-item.animating .gallery-item-image.after {
+            opacity: 1;
+        }
+        
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 40px 0;
+        }
+        
+        .pagination-button {
+            padding: 10px 20px;
+            background-color: transparent;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .pagination-button:hover:not(:disabled) {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+        }
+        
+        .pagination-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .pagination-info {
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .modal-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 40px 20px;
+        }
+        
+        .modal-image-container {
+            position: relative;
+            max-width: 85vw;
+            max-height: 70vh;
+            width: auto;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .modal-images-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-image {
+            max-width: 85vw;
+            max-height: 70vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            transition: opacity 0.15s ease;
+        }
+        
+        .modal-image.before {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .modal-image.after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            clip-path: inset(0 100% 0 0);
+        }
+        
+        .modal-divider {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 3px;
+            height: 100%;
+            background-color: var(--accent-color);
+            z-index: 10;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
+        }
+        
+        .modal-toggle-button {
+            padding: 15px 30px;
+            background: var(--accent-color);
+            border: 2px solid var(--accent-color);
+            color: var(--bg-color);
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        .modal-toggle-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .modal-label {
+            display: none; /* Etykieta wyłączona - użytkownik nie chce jej widzieć */
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 20;
+        }
+        
+        .modal-close:hover {
+            background: var(--accent-color);
+            color: var(--bg-color);
+            transform: rotate(90deg);
+        }
+        
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 20;
+            opacity: 0.8;
+        }
+        
+        .modal-nav:hover {
+            background: var(--accent-color);
+            color: var(--bg-color);
+            transform: translateY(-50%) scale(1.1);
+            opacity: 1;
+        }
+        
+        .modal-nav.animate {
+            animation: navPulse 0.4s ease;
+        }
+        
+        @keyframes navPulse {
+            0%, 100% { transform: translateY(-50%) scale(1); }
+            50% { transform: translateY(-50%) scale(1.2); }
+        }
+        
+        .modal-nav.prev {
+            left: 20px;
+        }
+        
+        .modal-nav.next {
+            right: 20px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--light-gray);
+            font-size: 0.9rem;
+            border-top: 1px solid #222;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .sticky-header {
+                height: 60px;
+                padding: 10px 0;
+            }
+            
+            .header-content {
+                flex-direction: row;
+                gap: 5px;
+                align-items: center;
+            }
+            
+            .header-left, .header-right {
+                flex: 0 0 auto;
+                min-width: 0;
+            }
+            
+            .header-center {
+                flex: 1;
+                gap: 5px;
+                min-width: 0;
+                overflow: hidden;
+            }
+            
+            /* Ukryj logo na urządzeniach mobilnych */
+            .logo-img {
+                display: none;
+            }
+            
+            .header-title {
+                font-size: 1.2rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-align: center;
+                width: 100%;
+            }
+            
+            /* Poprawiony przycisk językowy */
+            .language-dropdown {
+                position: relative;
+            }
+            
+            .language-dropdown-button {
+                font-size: 0.7rem;
+                padding: 6px 8px;
+                background: rgba(10, 10, 10, 0.8);
+                backdrop-filter: blur(10px);
+                border: 1px solid var(--accent-color);
+                border-radius: 5px;
+                min-width: 50px;
+                width: auto;
+                height: 32px;
+                justify-content: center;
+                white-space: nowrap;
+            }
+            
+            .language-dropdown-button img {
+                width: 14px;
+                height: 14px;
+            }
+            
+            .language-dropdown-content {
+                min-width: 80px;
+                right: 0;
+                left: auto;
+            }
+            
+            .language-dropdown-content a {
+                padding: 6px 8px;
+                font-size: 0.8rem;
+            }
+            
+            .nav-button {
+                padding: 6px 10px;
+                font-size: 1rem;
+                min-width: 32px;
+                width: 32px;
+                height: 32px;
+                border: 1px solid var(--accent-color);
+                line-height: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .nav-button-text {
+                display: none;
+            }
+            
+            .main-content {
+                padding: 90px 15px 30px;
+            }
+            
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .page-subtitle {
+                font-size: 1rem;
+                margin-bottom: 30px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                /* Wyśrodkowanie obrazów */
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 500px;
+            }
+            
+            .gallery-item {
+                min-height: 300px;
+                margin: 0 auto;
+                width: 100%;
+            }
+            
+            .gallery-item.landscape,
+            .gallery-item.square,
+            .gallery-item.portrait {
+                aspect-ratio: 4 / 5;
+            }
+            
+            .modal-image-container {
+                max-width: 95vw;
+                max-height: 60vh;
+            }
+            
+            .modal-image {
+                max-height: 60vh;
+            }
+            
+            .modal-toggle-button {
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+            
+            .modal-label {
+                display: none; /* Etykieta wyłączona na mobile */
+            }
+            
+            .modal-close {
+                width: 40px;
+                height: 40px;
+                font-size: 1.5rem;
+                top: 10px;
+                right: 10px;
+            }
+            
+            .modal-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .modal-nav.prev {
+                left: 10px;
+            }
+            
+            .modal-nav.next {
+                right: 10px;
+            }
+            
+            .pagination {
+                flex-wrap: wrap;
+                gap: 5px;
+            }
+            
+            .pagination-button {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="sticky-header">
+        <div class="header-content">
+            <div class="header-left">
+                <a href="index.html" class="nav-button">←<span class="nav-button-text"> Powrót</span></a>
+            </div>
+            <div class="header-center">
+                <img src="https://www.hair-estetic.com/logo.png" alt="Logo Hair Estetic" class="logo-img" loading="lazy">
+                <h1 class="header-title">Hair Estetic Gallery</h1>
+            </div>
+            <div class="header-right">
+                <div class="language-dropdown">
+                    <button class="language-dropdown-button" aria-label="Zmień język">
+                        <img src="https://www.hair-estetic.com/globe.png" width="20" height="20" alt="Przełącznik języka" loading="lazy">
+                        PL
+                    </button>
+                    <div class="language-dropdown-content">
+                        <a href="gallery.html" class="active">PL</a>
+                        <a href="gallery-en.html">EN</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <h2 class="page-title">Galeria Transformacji</h2>
+        <p class="page-subtitle">Zobacz spektakularne efekty przedłużania włosów metodą keratynową. Kliknij na zdjęcie, aby zobaczyć pełny widok.</p>
+        
+        <div class="gallery-grid" id="galleryGrid"></div>
+        
+        <div class="pagination" id="pagination"></div>
+    </main>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <button class="modal-nav prev" id="modalPrev">‹</button>
+            <button class="modal-nav next" id="modalNext">›</button>
+            
+            <div class="modal-image-container">
+                <div class="modal-images-wrapper">
+                    <img src="" alt="Przed transformacją" class="modal-image before" id="modalBefore">
+                    <img src="" alt="Po transformacji" class="modal-image after" id="modalAfter">
+                    <div class="modal-divider" id="modalDivider"></div>
+                </div>
+                <!-- Etykieta usunięta na życzenie użytkownika -->
+            </div>
+            
+            <button class="modal-toggle-button" id="modalToggle">
+                <span id="modalToggleText">Pokaż PO</span>
+            </button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 Hair Estetic. Wszystkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script>
+        // KONFIGURACJA GALERII - PRAWDZIWE ZDJĘCIA HAIR ESTETIC
+        const galleryData = [
+            {
+                before: 'images/before-1.jpg',
+                after: 'images/after-1.jpg',
+                format: 'portrait' // Transformacja 1: Przedłużanie włosów
+            },
+            {
+                before: 'images/before-2.jpg',
+                after: 'images/after-2.jpg',
+                format: 'portrait' // Transformacja 2: Przedłużanie i wygładzenie
+            },
+            {
+                before: 'images/before-3.jpg',
+                after: 'images/after-3.jpg',
+                format: 'portrait' // Transformacja 3: Bob do długich włosów
+            },
+            {
+                before: 'images/before-4.jpg',
+                after: 'images/after-4.jpg',
+                format: 'portrait' // Transformacja 4: Przedłużanie z logo Hair Estetic
+            },
+            {
+                before: 'images/before-5.jpg',
+                after: 'images/after-5.jpg',
+                format: 'portrait' // Transformacja 5: Naturalne przedłużenie z logo
+            }
+        ];
+
+        const ITEMS_PER_PAGE = 5; // Zmniejszona liczba dla lepszej wydajności
+        let currentPage = 1;
+        
+        // Pagination
+        function getTotalPages() {
+            return Math.ceil(galleryData.length / ITEMS_PER_PAGE);
+        }
+        
+        function getCurrentPageData() {
+            const start = (currentPage - 1) * ITEMS_PER_PAGE;
+            const end = start + ITEMS_PER_PAGE;
+            return galleryData.slice(start, end);
+        }
+        
+        function renderPagination() {
+            const totalPages = getTotalPages();
+            const pagination = document.getElementById('pagination');
+            pagination.innerHTML = '';
+            
+            if (totalPages <= 1) return;
+            
+            const prevBtn = document.createElement('button');
+            prevBtn.className = 'pagination-button';
+            prevBtn.textContent = '← Poprzednia';
+            prevBtn.disabled = currentPage === 1;
+            prevBtn.onclick = () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    renderGallery();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            };
+            pagination.appendChild(prevBtn);
+            
+            const info = document.createElement('span');
+            info.className = 'pagination-info';
+            info.textContent = `Strona ${currentPage} z ${totalPages}`;
+            pagination.appendChild(info);
+            
+            const nextBtn = document.createElement('button');
+            nextBtn.className = 'pagination-button';
+            nextBtn.textContent = 'Następna →';
+            nextBtn.disabled = currentPage === totalPages;
+            nextBtn.onclick = () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    renderGallery();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            };
+            pagination.appendChild(nextBtn);
+        }
+        
+        // Gallery item with sliding divider
+        function createGalleryItem(data, index) {
+            const item = document.createElement('div');
+            item.className = `gallery-item ${data.format || 'portrait'}`;
+            
+            item.innerHTML = `
+                <div class="gallery-item-images">
+                    <img src="${data.before}" alt="Przed ${index + 1}" class="gallery-item-image before" loading="eager" preload="auto">
+                    <img src="${data.after}" alt="Po ${index + 1}" class="gallery-item-image after" loading="eager" preload="auto">
+                    <div class="gallery-item-divider"></div>
+                </div>
+                <div class="gallery-item-label">Przed</div>
+            `;
+            
+            const beforeImage = item.querySelector('.before');
+            const afterImage = item.querySelector('.after');
+            const divider = item.querySelector('.gallery-item-divider');
+            const label = item.querySelector('.gallery-item-label');
+            
+            // Dodaj event listenery dla ładowania obrazów
+            let imagesLoaded = 0;
+            const totalImages = 2;
+            
+            function checkAllImagesLoaded() {
+                imagesLoaded++;
+                if (imagesLoaded === totalImages) {
+                    item.querySelector('.gallery-item-images').classList.add('loaded');
+                }
+            }
+            
+            beforeImage.addEventListener('load', () => {
+                beforeImage.classList.add('loaded');
+                checkAllImagesLoaded();
+            });
+            
+            afterImage.addEventListener('load', () => {
+                afterImage.classList.add('loaded');
+                checkAllImagesLoaded();
+            });
+            
+            // Error handling dla obrazów
+            beforeImage.addEventListener('error', () => {
+                console.error('Failed to load image:', data.before);
+                beforeImage.style.background = '#333';
+            });
+            
+            afterImage.addEventListener('error', () => {
+                console.error('Failed to load image:', data.after);
+                afterImage.style.background = '#333';
+            });
+            
+            let isAnimating = false;
+            let animationFrame = null;
+            let isReturning = false;
+            const animationDuration = 4000; // 4 sekundy na pełną animację
+            const returnDuration = 800; // Czas animacji powrotu
+            
+            function startAnimation() {
+                if (isAnimating || isReturning) return;
+                isAnimating = true;
+                item.classList.add('animating');
+                animateSlider();
+            }
+            
+            function stopAnimation() {
+                if (!isAnimating && !item.classList.contains('animating')) return;
+                
+                isAnimating = false;
+                if (animationFrame) {
+                    cancelAnimationFrame(animationFrame);
+                    animationFrame = null;
+                }
+                
+                // Na desktop - animuj powrót do pozycji początkowej
+                if (window.innerWidth > 768) {
+                    animateReturn();
+                } else {
+                    // Na mobile - natychmiastowy reset
+                    item.classList.remove('animating');
+                    divider.style.left = '0%';
+                    afterImage.style.clipPath = 'inset(0 100% 0 0)';
+                    label.textContent = 'Przed';
+                }
+            }
+            
+            function animateReturn() {
+                if (isReturning) return;
+                isReturning = true;
+                
+                const currentLeft = parseFloat(divider.style.left) || 0;
+                let start = null;
+                
+                function returnAnimate(timestamp) {
+                    if (!start) start = timestamp;
+                    const progress = Math.min((timestamp - start) / returnDuration, 1);
+                    const easeProgress = easeOutCubic(progress);
+                    
+                    const position = currentLeft * (1 - easeProgress);
+                    divider.style.left = `${position}%`;
+                    afterImage.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
+                    
+                    if (position < 50) {
+                        label.textContent = 'Przed';
+                    }
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(returnAnimate);
+                    } else {
+                        // Zakończ animację powrotu
+                        isReturning = false;
+                        item.classList.remove('animating');
+                        divider.style.left = '0%';
+                        afterImage.style.clipPath = 'inset(0 100% 0 0)';
+                        label.textContent = 'Przed';
+                    }
+                }
+                
+                requestAnimationFrame(returnAnimate);
+            }
+            
+            function animateSlider() {
+                let start = null;
+                
+                function animate(timestamp) {
+                    if (!isAnimating) {
+                        stopAnimation();
+                        return;
+                    }
+                    
+                    if (!start) start = timestamp;
+                    const progress = (timestamp - start) / animationDuration;
+                    
+                    if (progress < 0.5) {
+                        // Faza 1: Przesuwanie w prawo (0% -> 100%)
+                        const easeProgress = easeOutCubic(progress * 2);
+                        const position = easeProgress * 100;
+                        divider.style.left = `${position}%`;
+                        afterImage.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
+                        
+                        if (position > 50) {
+                            label.textContent = 'Po';
+                        }
+                    } else {
+                        // Faza 2: Przesuwanie w lewo (100% -> 0%)
+                        const easeProgress = easeOutCubic((progress - 0.5) * 2);
+                        const position = 100 - (easeProgress * 100);
+                        divider.style.left = `${position}%`;
+                        afterImage.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
+                        
+                        if (position < 50) {
+                            label.textContent = 'Przed';
+                        }
+                    }
+                    
+                    if (progress < 1) {
+                        animationFrame = requestAnimationFrame(animate);
+                    } else {
+                        // Powtórz animację jeśli nadal animujemy
+                        if (isAnimating) {
+                            animateSlider();
+                        }
+                    }
+                }
+                
+                animationFrame = requestAnimationFrame(animate);
+            }
+            
+            // Easing function - przyspieszenie na końcu
+            function easeOutCubic(t) {
+                return 1 - Math.pow(1 - t, 3);
+            }
+            
+            // Desktop: animacja gdy kursor jest w środkowej części obrazu
+            if (window.innerWidth > 768) {
+                let isHoveringCenter = false;
+                
+                item.addEventListener('mousemove', (e) => {
+                    const rect = item.getBoundingClientRect();
+                    const mouseX = e.clientX - rect.left;
+                    const itemWidth = rect.width;
+                    const centerZoneStart = itemWidth * 0.3; // 30% od lewej
+                    const centerZoneEnd = itemWidth * 0.7; // 70% od lewej
+                    
+                    if (mouseX >= centerZoneStart && mouseX <= centerZoneEnd) {
+                        if (!isHoveringCenter) {
+                            isHoveringCenter = true;
+                            startAnimation();
+                        }
+                    } else {
+                        if (isHoveringCenter) {
+                            isHoveringCenter = false;
+                            stopAnimation();
+                        }
+                    }
+                });
+                
+                item.addEventListener('mouseleave', () => {
+                    isHoveringCenter = false;
+                    stopAnimation();
+                });
+            } else {
+                // Zachowaj oryginalną funkcjonalność hover dla tabletów
+                item.addEventListener('mouseenter', startAnimation);
+                item.addEventListener('mouseleave', stopAnimation);
+            }
+            
+            // Mobile: touch/tap to trigger animation
+            if (window.innerWidth <= 768) {
+                let isTouchAnimating = false;
+                let touchAnimationFrame = null;
+                
+                function startTouchAnimation() {
+                    if (isTouchAnimating) return;
+                    
+                    isTouchAnimating = true;
+                    item.classList.add('animating');
+                    
+                    // Jednorazowa animacja: przed -> po -> przed (3 sekundy)
+                    const touchAnimationDuration = 3000;
+                    let start = null;
+                    
+                    function animateTouch(timestamp) {
+                        if (!start) start = timestamp;
+                        const progress = (timestamp - start) / touchAnimationDuration;
+                        
+                        if (progress < 0.4) {
+                            // Faza 1: Przesuwanie w prawo (0% -> 100%) - 40% czasu
+                            const phaseProgress = progress / 0.4;
+                            const easeProgress = easeOutCubic(phaseProgress);
+                            const position = easeProgress * 100;
+                            
+                            divider.style.left = `${position}%`;
+                            afterImage.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
+                            
+                            if (position > 50) {
+                                label.textContent = 'Po';
+                            }
+                        } else if (progress < 0.6) {
+                            // Faza 2: Zatrzymanie w pozycji "po" - 20% czasu
+                            divider.style.left = '100%';
+                            afterImage.style.clipPath = 'inset(0 0% 0 0)';
+                            label.textContent = 'Po';
+                        } else if (progress < 1.0) {
+                            // Faza 3: Powrót do "przed" (100% -> 0%) - 40% czasu
+                            const phaseProgress = (progress - 0.6) / 0.4;
+                            const easeProgress = easeOutCubic(phaseProgress);
+                            const position = 100 - (easeProgress * 100);
+                            
+                            divider.style.left = `${position}%`;
+                            afterImage.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
+                            
+                            if (position < 50) {
+                                label.textContent = 'Przed';
+                            }
+                        } else {
+                            // Koniec animacji
+                            isTouchAnimating = false;
+                            item.classList.remove('animating');
+                            divider.style.left = '0%';
+                            afterImage.style.clipPath = 'inset(0 100% 0 0)';
+                            label.textContent = 'Przed';
+                            return;
+                        }
+                        
+                        touchAnimationFrame = requestAnimationFrame(animateTouch);
+                    }
+                    
+                    touchAnimationFrame = requestAnimationFrame(animateTouch);
+                }
+                
+                // Touch events - obsługa dotyku/tapnięcia
+                let touchStartTime = 0;
+                let touchStartY = 0;
+                let touchMoved = false;
+                
+                item.addEventListener('touchstart', (e) => {
+                    touchStartTime = Date.now();
+                    touchStartY = e.touches[0].clientY;
+                    touchMoved = false;
+                }, { passive: true });
+                
+                item.addEventListener('touchmove', (e) => {
+                    if (!touchStartY) return;
+                    
+                    const currentY = e.touches[0].clientY;
+                    const deltaY = Math.abs(currentY - touchStartY);
+                    
+                    // Jeśli ruch > 10px to traktuj jako scroll, nie tap
+                    if (deltaY > 10) {
+                        touchMoved = true;
+                    }
+                }, { passive: true });
+                
+                item.addEventListener('touchend', (e) => {
+                    const touchDuration = Date.now() - touchStartTime;
+                    
+                    // Warunki dla udanego tap:
+                    // 1. Krótkie dotknięcie (< 300ms)
+                    // 2. Minimal ruch (nie scroll)
+                    if (touchDuration < 300 && !touchMoved && !isTouchAnimating) {
+                        e.preventDefault(); // Zapobiega konfliktom z innymi eventami
+                        startTouchAnimation();
+                    }
+                    
+                    // Reset
+                    touchStartTime = 0;
+                    touchStartY = 0;
+                    touchMoved = false;
+                }, { passive: false });
+                
+                // Fallback dla starszych urządzeń - click event
+                item.addEventListener('click', (e) => {
+                    // Only trigger if we're on mobile and not already animating
+                    if (window.innerWidth <= 768 && !isTouchAnimating) {
+                        // Sprawdź czy to nie klik do otwarcia modala
+                        const rect = item.getBoundingClientRect();
+                        const clickX = e.clientX - rect.left;
+                        const clickY = e.clientY - rect.top;
+                        
+                        // Jeśli klik w środkowej części (nie na brzegach) - uruchom animację
+                        const centerZoneX = rect.width * 0.2; // 20% margines z każdej strony
+                        const centerZoneY = rect.height * 0.2;
+                        
+                        if (clickX > centerZoneX && clickX < (rect.width - centerZoneX) && 
+                            clickY > centerZoneY && clickY < (rect.height - centerZoneY)) {
+                            e.stopPropagation(); // Zatrzymaj propagację do modal
+                            startTouchAnimation();
+                        }
+                    }
+                });
+            }
+            
+            // Click to open modal - adjusted for mobile
+            item.addEventListener('click', (e) => {
+                console.log('Clicked item index:', index, 'Current page:', currentPage); // Debug log
+                
+                // Na mobile sprawdź czy to nie był touch do animacji
+                if (window.innerWidth <= 768) {
+                    const rect = item.getBoundingClientRect();
+                    const clickX = e.clientX - rect.left;
+                    const clickY = e.clientY - rect.top;
+                    
+                    // Jeśli klik w środkowej części - nie otwieraj modal (to była animacja)
+                    const centerZoneX = rect.width * 0.2;
+                    const centerZoneY = rect.height * 0.2;
+                    
+                    if (clickX > centerZoneX && clickX < (rect.width - centerZoneX) && 
+                        clickY > centerZoneY && clickY < (rect.height - centerZoneY)) {
+                        console.log('Touch animation triggered, not opening modal');
+                        return; // Nie otwieraj modal
+                    }
+                }
+                
+                // Poprawny indeks: bezwzględny indeks w całej tablicy galleryData
+                const actualIndex = (currentPage - 1) * ITEMS_PER_PAGE + index;
+                console.log('Opening modal with actualIndex:', actualIndex, 'Total items:', galleryData.length);
+                
+                // Sprawdź czy indeks jest prawidłowy
+                if (actualIndex >= 0 && actualIndex < galleryData.length) {
+                    openModal(actualIndex);
+                } else {
+                    console.error('Invalid index:', actualIndex, 'for galleryData length:', galleryData.length);
+                }
+            });
+            
+            return item;
+        }
+        
+        function renderGallery() {
+            const galleryGrid = document.getElementById('galleryGrid');
+            galleryGrid.innerHTML = '';
+            
+            const pageData = getCurrentPageData();
+            pageData.forEach((data, index) => {
+                galleryGrid.appendChild(createGalleryItem(data, index));
+            });
+            
+            renderPagination();
+        }
+        
+        // Modal
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalClose = document.getElementById('modalClose');
+        const modalPrev = document.getElementById('modalPrev');
+        const modalNext = document.getElementById('modalNext');
+        const modalBefore = document.getElementById('modalBefore');
+        const modalAfter = document.getElementById('modalAfter');
+        const modalLabel = document.getElementById('modalLabel');
+        const modalDivider = document.getElementById('modalDivider');
+        const modalToggle = document.getElementById('modalToggle');
+        const modalToggleText = document.getElementById('modalToggleText');
+        
+        let currentModalIndex = 0;
+        let isShowingAfter = false;
+        
+        function openModal(index) {
+            currentModalIndex = index;
+            isShowingAfter = false;
+            modalOverlay.classList.add('active');
+            document.body.classList.add('modal-open');
+            updateModalImage();
+        }
+        
+        function closeModal() {
+            modalOverlay.classList.remove('active');
+            document.body.classList.remove('modal-open');
+        }
+        
+        function updateModalImage() {
+            // Dodaj animację fadeout
+            modalBefore.style.opacity = '0';
+            modalAfter.style.opacity = '0';
+            
+            setTimeout(() => {
+                const data = galleryData[currentModalIndex];
+                modalBefore.src = data.before;
+                modalAfter.src = data.after;
+                
+                // Reset do "przed"
+                isShowingAfter = false;
+                modalAfter.style.clipPath = 'inset(0 100% 0 0)';
+                modalDivider.style.left = '0%';
+                // Etykieta została usunięta
+                modalToggleText.textContent = 'Pokaż PO';
+                
+                // Fadein
+                modalBefore.style.opacity = '1';
+                modalAfter.style.opacity = '1';
+            }, 150);
+        }
+        
+        function toggleModal() {
+            isShowingAfter = !isShowingAfter;
+            
+            // Natychmiastowa aktualizacja przycisku
+            modalToggleText.textContent = isShowingAfter ? 'Pokaż PRZED' : 'Pokaż PO';
+            
+            const targetPosition = isShowingAfter ? 100 : 0;
+            let start = null;
+            const duration = 1000; // Skrócona animacja z 1500ms do 1000ms
+            
+            function animate(timestamp) {
+                if (!start) start = timestamp;
+                const progress = (timestamp - start) / duration;
+                
+                if (progress < 1) {
+                    const easeProgress = easeOutCubic(progress);
+                    const position = isShowingAfter ? 
+                        easeProgress * 100 : 
+                        100 - (easeProgress * 100);
+                    
+                    modalDivider.style.left = `${position}%`;
+                    modalAfter.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
+                    
+                    // Etykieta została usunięta - kod aktualizacji niepotrzebny
+                    
+                    requestAnimationFrame(animate);
+                } else {
+                    modalDivider.style.left = `${targetPosition}%`;
+                    modalAfter.style.clipPath = `inset(0 ${100 - targetPosition}% 0 0)`;
+                    // Etykieta została usunięta
+                }
+            }
+            
+            requestAnimationFrame(animate);
+        }
+        
+        function easeOutCubic(t) {
+            return 1 - Math.pow(1 - t, 3);
+        }
+        
+        function nextModalImage() {
+            currentModalIndex = (currentModalIndex + 1) % galleryData.length;
+            modalNext.classList.add('animate');
+            setTimeout(() => modalNext.classList.remove('animate'), 400);
+            updateModalImage();
+        }
+        
+        function prevModalImage() {
+            currentModalIndex = (currentModalIndex - 1 + galleryData.length) % galleryData.length;
+            modalPrev.classList.add('animate');
+            setTimeout(() => modalPrev.classList.remove('animate'), 400);
+            updateModalImage();
+        }
+        
+        // Event listeners
+        modalClose.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) closeModal();
+        });
+        modalToggle.addEventListener('click', toggleModal);
+        modalNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            nextModalImage();
+        });
+        modalPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            prevModalImage();
+        });
+        
+        document.addEventListener('keydown', (e) => {
+            if (!modalOverlay.classList.contains('active')) return;
+            if (e.key === 'Escape') closeModal();
+            if (e.key === 'ArrowRight') nextModalImage();
+            if (e.key === 'ArrowLeft') prevModalImage();
+            if (e.key === ' ') {
+                e.preventDefault();
+                toggleModal();
+            }
+        });
+        
+        // Language dropdown
+        const dropdownButtons = document.querySelectorAll('.language-dropdown-button');
+        dropdownButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                event.stopPropagation();
+                const dropdown = event.target.closest('.language-dropdown');
+                if (dropdown) {
+                    dropdown.classList.toggle('open');
+                }
+            });
+        });
+        
+        document.addEventListener('click', (event) => {
+            const dropdowns = document.querySelectorAll('.language-dropdown');
+            dropdowns.forEach(dropdown => {
+                if (!dropdown.contains(event.target)) {
+                    dropdown.classList.remove('open');
+                }
+            });
+        });
+        
+        // Init
+        renderGallery();
+    </script>
+</body>
+</html>
